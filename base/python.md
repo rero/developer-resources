@@ -295,6 +295,20 @@ for x in filter(lambda i: i<5, L):    # returns [1, 4]
 for x in map(lambda: x: x*2, L):      # returns [2, 8, 14]
 ```
 
+# Project Files Hierarchy
+
+```
+my_project/
+  my_module/
+    __init__.py
+    my_module.py
+  tests/
+  setup.py                        # python makefile
+  README.md
+  requirements-devel.txt
+  pytest.ini                      # config file
+```
+
 <a name="references"></a>
 ## References
 
