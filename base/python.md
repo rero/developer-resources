@@ -36,7 +36,7 @@ n = len(s)
 
 ### Lists
 
-```
+```python
 L = [1, 2, 3, 4, 5]
 L[0]                                  # single position
 L[0:3]                                # the first three elements
@@ -55,15 +55,16 @@ L.index(x)                            # index of the first occurrence
 
 ### Tuples
 
-```
+```python
 x = 1,2,3
 x = (1,2,3)
 x[1]
 a,b,c = x
 ```
+
 ### Dictionaries
 
-```
+```python
 D = {'f1': 10, 'f2': 20}              # dict creation
 D = dict(f1=10, f2=20)
 
@@ -84,20 +85,20 @@ D.get((1,1,1), -1)
 
 ### Sets
 
-```
+```python
 S = {1,3,5}
 L = [1, 3, 1, 5, 3]
 S = set(L)                            # set([1, 3, 5])
 if (3 in S):
 S1+S2, S1-S2, S1^S2, S1|S2
 ```
+
 <a name="loops"></a>
 ## Loops
 
 ### For
 
-
-```
+```python
 for x in range(6):                    # 0, 1, 2, 3, 4, 5
 for x in range(1,6):                  # 1, 2, 3, 4, 5
 for x in range(1,6,2):                # 1, 3, 5
@@ -116,7 +117,7 @@ __Note__: see also `continue`, `break` and `else` for the for statement.
 
 ### While
 
-```
+```python
 count = 0
 while (count < 9):
    print('The count is: {0:d}'.format(count))
@@ -126,7 +127,7 @@ while (count < 9):
 <a name="function"></a>
 ## Function
 
-```
+```python
 def foo(arg1, *args, **dic):
   """Example documentation string.
 
@@ -150,14 +151,14 @@ foo.__doc__                           # the docstring
 
 ### Printing
 
-```
+```python
 str(x)                                # human readable representation
 repr(x)                               # interpretable representation
 ```
 
 ### File Access
 
-```
+```python
 f = open("test.txt", "w")             # r / r+ / rb / rb+ / w / wb
 f.write("Ala ma kota\n")
 f.close()
@@ -169,14 +170,14 @@ L = open("test.txt").readlines()      # returns a list of lines
 
 ### Exclusive Access
 
-```
+```python
 import os
 f = os.fdopen(os.open("test.txt", os.O_WRONLY|os.O_EXCL), "w")
 ```
 
 ### Input
 
-```
+```python
 import sys
 x = raw_input("Name: ")
 for line in sys.stdin: print(line)
@@ -184,7 +185,7 @@ for line in sys.stdin: print(line)
 
 ### String Buffer
 
-```
+```python
 from StringIO import StringIO
 import sys
 buf = StringIO()
@@ -195,20 +196,20 @@ x = buf.getvalue()
 
 ### Error Stream
 
-```
+```python
 print("Error!", file=sys.stderr, flush=True)
-``
+```
 
 ### Other Operation
 
-```
+```python
 os.rename(from, to)                  os.remove(path)
 os.chmod(file, 0700)                 os.stat(file)
 ```
 <a name="exceptions"></a>
 ## Exceptions
 
-```
+```python
 try:
     raise TypeError("arg")
 except (RuntimeError, NameError):
@@ -224,10 +225,11 @@ else:
 finally:                              # on the way out
     ...                               # unhandled exc, release resources
 ```
+
 <a name="object"></a>
 ## Object-oriented programming
 
-```
+```python
 class Person:
     ID = 0                            # static variable
     def __init__(self, name, age=0):
@@ -255,7 +257,7 @@ print(bob)
 
 ### os module
 
-```
+```python
 os.pathsep    os.sep          os.pardir       os.curdir       os.linesep
 os.popen("ps ax").readlines()
 os.listdir("/usr/local")              # ['bin', 'etc', ...]
@@ -264,7 +266,7 @@ os.glob("*.txt")                      # ['test.txt', 'out.txt', ...]
 
 ### os.path module
 
-```
+```python
 os.path.split("/usr/bin/go.sh")       # ('/usr/bin', 'go.sh')
 os.path.join("/usr/bin", "go.sh")     # '/usr/bin/go.sh'
 os.path.splitext("/usr/bin/go.sh")    # ('/usr/bin/go', '.sh')
@@ -274,20 +276,20 @@ os.path.isfile("go.sh")
 
 ### os.environ module
 
-```
+```python
 os.environ.get("PYTHONPATH")          # get the value of a environment variable
 ```
 
 ### Directories
 
-```
+```python
 for (dir, subdirs, files) in os.walk("/tmp"):
     for f in files: print(f)
 ```
 
 ### Functional Programming
 
-```
+```python
 f = lambda x: x+10                    # creates an anonymous function
 f(5)                                  # returns 15
 L = [1, 4, 7]

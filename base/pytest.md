@@ -4,7 +4,7 @@ Python test suite. The pytest framework makes it easy to write small tests, yet 
 
 ## Installation
 
-```
+```bash
 pip install pytest               # core
 pip install pytest-cache         # bytest cache plugin
 pip install pytest-cov           # generate code coverage report
@@ -35,7 +35,7 @@ my_project/
 
 ### Run
 
-```
+```bash
 py.test                           # run the test
 py.test -s                        # run with stdout enable
 py.test tests                     # run tests on the tests directory only
@@ -47,7 +47,7 @@ py.test tests/test_app.py         # run one file tests
 
 ### pytest.ini
 
-```
+```ini
 [pytest]
 addopts = --pep8 --ignore=docs --cov=simple_app --cov-report=term-missing
 ```

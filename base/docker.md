@@ -14,7 +14,7 @@ A docker package can be downloaded [here](https://docs.docker.com/docker-for-mac
 
 ### MACOSX (homebrew)
 
-```
+```bash
 brew install docker docker-compose docker-machine docker-machine-driver-xhyve
 ```
 
@@ -29,7 +29,7 @@ Read the [documentation](https://docs.docker.com/engine/installation/linux/).
 ### Dockerfile
 
 
-```
+```yaml
 # Pull base image.
 FROM elasticsearch:2.1.1
 
@@ -40,7 +40,7 @@ RUN \
 
 ### docker-compose.yml
 
-```
+```yaml
 postgresql:
   image: postgres
   environment:
@@ -74,7 +74,7 @@ rabbitmq:
 
 ### docker
 
-```
+```bash
 docker images
 docker ps
 docker ps -a
@@ -82,14 +82,14 @@ docker ps -a
 
 ### docker-compose
 
-```
+```bash
 docker-compose up
 docker-compose stop
 ```
 
 ### docker-machine
 
-```
+```bash
 docker-machine create -d xhyve my_machine
 docker-machine start my_machine
 docker-machine stop my_machine
