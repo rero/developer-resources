@@ -37,7 +37,7 @@ This documentation will be a good starting point for Invenio 3 world. This will 
 - [json](data/json.md)
 - [jsonschema](base/jsonschema.md)
 - [invenio-jsonschemas](base/invenio-jsonschemas.md)
-- [invenio-marc21.md](data/invenio-marc21.md)
+- [invenio-marc21](data/invenio-marc21.md)
 
 #### [Web](web/README.md)
 
