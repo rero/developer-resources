@@ -101,6 +101,7 @@ for rec in Record.get_record(rec_uuid).revisions:
     creation_date = rec.created
     modification_date = rec.updated
     record_data = rec.dumps()
+
 rec = Record.get_record(rec_uuid)            # get the db record
 rec = rec.revert(0)                          # revert to the first revision
 db.session.commit()                          # terminate the transaction

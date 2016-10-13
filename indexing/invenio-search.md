@@ -22,15 +22,15 @@ from invenio_search import current_search
 ### Creation/Deletion
 
 ```python
+from invenio_search import current_search
 try:
     for index in current_search.delete():
         pass
     for index in current_search.create():
         pass
-    except:
-        pass
+except:
+    pass
 assert 'records-records-v0.0.1' in current_search.mappings
-
 ```
 
 ### Record Indexing
