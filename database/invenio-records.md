@@ -35,6 +35,7 @@ from invenio_records.models import RecordMetadata
 ### Create a Record
 
 ```python
+from invenio_db import db
 from invenio_records.api import Record
 
 rec = Record.create({'title': 'my title'}) # new Record
