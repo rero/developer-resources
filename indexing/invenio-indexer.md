@@ -28,7 +28,8 @@ rec = Record.create({
         'description': 'bla',
         'author': 'me',
         'category': 'test',
-        'status': 'draft'
+        'status': 'draft',
+        'control_number': 'test'
     })
 RecordIndexer().bulk_index([rec.id])
 RecordIndexer().process_bulk_queue()
