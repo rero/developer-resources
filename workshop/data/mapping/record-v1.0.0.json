@@ -1,0 +1,68 @@
+{
+    "mappings": {
+        "record-v1.0.0": {
+            "date_detection": false,
+            "numeric_detection" : false,
+            "properties": {
+                "$schema": {
+                    "type": "string",
+                    "index": "not_analyzed"
+                },
+                "_created": {
+                    "type": "date",
+                    "format": "strict_date_optional_time||epoch_millis"
+                },
+                "_updated": {
+                    "type": "date",
+                    "format": "strict_date_optional_time||epoch_millis"
+                },
+                "control_number": {
+                    "type": "string",
+                    "index": "not_analyzed"
+                },
+                "album": {
+                    "type": "string",
+                    "analyzer": "english",
+                    "copy_to": "sort_album"
+                },
+                "sort_album": {
+                    "type": "string",
+                    "index": "not_analyzed"
+                },
+                "artist": {
+                    "type": "string",
+                    "analyzer": "standard"
+                },
+                "file_name": {
+                    "type": "string",
+                    "index": "not_analyzed"
+                },
+                "genre": {
+                    "type": "string",
+                    "index": "not_analyzed"
+                },
+                "mime": {
+                    "type": "string",
+                    "index": "not_analyzed"
+                },
+                "performers": {
+                    "type": "string",
+                    "analyzer": "standard",
+                    "copy_to": "facet_performers"
+                },
+                "facet_performers":{
+                    "type": "string",
+                    "index": "not_analyzed"
+                },
+                "tracks":{
+                    "type": "string",
+                    "index": "not_analyzed"
+                },
+                "year":{
+                  "type": "date",
+                  "format": "yyyy"
+                }
+            }
+        }
+    }
+}

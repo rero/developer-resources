@@ -52,3 +52,6 @@ This documentation will be a good starting point for Invenio 3 world. This will 
 - [invenio-records-ui](web/invenio-records-ui.md)
 - [invenio-search-ui](web/invenio-search-ui.md)
 - [redis](web/redis.md)
+
+#### [Workshop](workshop/workshop1.md)
+- [workshop1 (2016/12/21)](workshop/workshop1.md#workshop-1)
