@@ -56,7 +56,3 @@ workshop1 assets build  # assets
 
 workshop1 run            # lancement serveur développement
 ```
-
-## Erreur dans la page de résultats
-
-La page de résultat contient une erreur car la base de donnée et l'indexation ne sont pas initialisés.

@@ -147,7 +147,7 @@ __note__: my_instance est à remplacer par le nom de l'instance ici `workshop1`.
 6. installer et exécuter les services `dockers`
 7. lancer le serveur de développement et visualiser l'application `http://localhost:5000`
 
-A cette étape le serveur répond à [http://localhost:5000](http://localhost:5000). La page des résultats contient un message d'erreur. Pourquoi?
+A cette étape le serveur répond à [http://localhost:5000](http://localhost:5000).
 
 __[La Solution](solutions/install.md#cr-ation-et-installation-de-la-nouvelle-instance-invenio)__
 
@@ -177,8 +177,6 @@ my_instance index queue --help   # utilitaires de queue d'indexation
 __[La Solution](solutions/init.md#initialiser-l-application)__
 
 #### Discussion
-
-Cette fois la page de recherche ne donne plus d'erreur! Par contre nous avons 0 résultat ce qui est normal car aucune donnée n'a été rentrée dans le système.
 
 A présent l'instance est installée. Elle ne contient aucune donnée. C'est le début de sa personnalisation.
 

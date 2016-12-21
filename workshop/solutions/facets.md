@@ -2,7 +2,7 @@
 
 ## Rajouter la facette à l'interface
 
-Remplacer les lignes suivantes dans `workshop/config.py`:
+Remplacer les lignes suivantes dans `workshop1/config.py`:
 
 ```python
 RECORDS_REST_FACETS = dict(
@@ -45,7 +45,7 @@ RECORDS_REST_FACETS = dict(
             )
         },
         filters=dict(
-            artist=terms_filter('artist'),
+            artist=terms_filter('facet_artist'),
             mime=terms_filter('mime'),
             genre=terms_filter('genre')
         ),
