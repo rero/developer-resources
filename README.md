@@ -51,6 +51,8 @@ This documentation will be a good starting point for Invenio 3 world. This will 
 - [invenio-formatter](web/invenio-formatter.md)
 - [invenio-records-ui](web/invenio-records-ui.md)
 - [invenio-search-ui](web/invenio-search-ui.md)
+- [invenio-user-management](web/invenio-user.md)
+
 - [redis](web/redis.md)
 
 #### [Workshop](workshop/workshop1.md)
