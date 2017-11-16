@@ -12,6 +12,7 @@ This documentation will be a good starting point for Invenio 3 world. This will 
 - [python](base/python.md)
 - [pytest](base/pytest.md)
 - [invenio](base/invenio.md)
+- [babel](base/babel.md)
 
 
 #### [Database](database/README.md)
