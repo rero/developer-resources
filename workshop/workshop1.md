@@ -11,25 +11,26 @@ __prérequis__:
 
 ### Table des matières
 
-#### [1. Etape 1: créer une nouvelle instance](#etape-1-cr-er-une-nouvelle-instance)
-- [L'environnement de travail](#l-environnement-de-travail)
+#### [1. Etape 1: créer une nouvelle instance](#etape-1-créer-une-nouvelle-instance)
+- [L'environnement de travail](#lenvironnement-de-travail)
 - [Une nouvelle instance invenio](#une-nouvelle-instance-invenio)
-- [Initialiser l'application](#initialiser-l-application)
+- [Initialiser l'application](#initialiser-lapplication)
 
 #### [2. Etape 2: les données](#etape-2-les-donn-es)
-- [Charger une première donnée](#charger-une-premi-re-donn-e)
-- [Validation de données avec JSON-Schema](#validation-de-donn-es-avec-json-schema)
+- [Charger une première donnée](#charger-une-première-donnée)
+- [Validation de données avec JSON-Schema](#validation-de-données-avec-json-schema)
 - [Navigation par facettes](#navigation-par-facettes)
 
-#### [3. Etape 3: l'interface utilisateur](#etape-3-l-interface-utilisateur)
+#### [3. Etape 3: l'interface utilisateur](#etape-3-linterface-utilisateur)
 - [Changer le logo](#changer-le-logo)
-- [Ajustement la présentation des résultats](#ajustement-la-pr-sentation-des-r-sultats)
-- [Correction la présentation des facettes](#correction-la-pr-sentation-des-facettes)
+- [Ajustement la présentation des résultats](#ajustement-la-présentation-des-résultats)
+- [Correction la présentation des facettes](#correction-la-présentation-des-facettes)
 
 #### [4. Conclusion](#conclusion)
-#### [5. Références](#r-f-rences)
+#### [5. Références](#références)
 
 ----------------
+
 ## Etape 1: créer une nouvelle instance
 
 ### But
@@ -74,7 +75,7 @@ pip install git+https://github.com/inveniosoftware/invenio-xx.git#egg=invenio-xx
 
 Si tout s'est bien passé vous avez une nouvelle commande disponible: `inveniomanage` et les sources de ce paquet installé dans `src`. Vous pouvez dès à présent explorer la commande pour créer la nouvelle instance.
 
-__[La Solution](solutions/virtualenv.md#cr-er-un-environnement-de-travail)__
+__[La Solution](solutions/virtualenv.md#créer-un-environnement-de-travail)__
 
 #### Discussion
 
@@ -149,7 +150,7 @@ __note__: my_instance est à remplacer par le nom de l'instance ici `workshop1`.
 
 A cette étape le serveur répond à [http://localhost:5000](http://localhost:5000).
 
-__[La Solution](solutions/install.md#cr-ation-et-installation-de-la-nouvelle-instance-invenio)__
+__[La Solution](solutions/install.md#création-et-installation-de-la-nouvelle-instance-invenio)__
 
 
 ### Initialiser l'application
@@ -174,13 +175,14 @@ my_instance index queue --help   # utilitaires de queue d'indexation
 2. initialiser le moteur d'indexation
 3. obtenir "no results" pour [http://localhost:5000/search](http://localhost:5000/search)
 
-__[La Solution](solutions/init.md#initialiser-l-application)__
+__[La Solution](solutions/init.md#initialiser-lapplication)__
 
 #### Discussion
 
 A présent l'instance est installée. Elle ne contient aucune donnée. C'est le début de sa personnalisation.
 
 ----------------
+
 ## Etape 2: les données
 
 ### But
@@ -214,7 +216,7 @@ my_instance index --help      # utilitaire d'indexation
 2. indexer le document
 3. visualiser la donnée dans la page des résultats, la vue détaillée et l'API REST
 
-__[La Solution](solutions/simple_data.md#charger-une-premi-re-donn-e)__
+__[La Solution](solutions/simple_data.md#charger-une-première-donnée)__
 
 #### Discussion
 
@@ -267,7 +269,7 @@ __Note:__ à chaque fois que le fichier `setup.py` est modifié il faut réinsta
 1. examiner et charger les données `data/data.json` en rajoutant le schema avec l'aide de `dojson`
 2. corriger le schema au besoin
 
-__[La Solution](solutions/jsonschema.md#validation-des-donn-es-avec-json-schema)__
+__[La Solution](solutions/jsonschema.md#validation-des-données-avec-json-schema)__
 
 
 ### Navigation par facettes
@@ -307,8 +309,8 @@ __[La Solution](solutions/facets.md#navigation-par-facettes)__
 
 Lorsque le `mapping` est touché, il est nécessaire de ré-indexer. Ceci peut paraître lourd, mais c'est inévitable. Par chance, `Elasticsearch` permet de créer et remplir un nouvel index tout en utilisant l'ancien; il sera part contre nécessaire de rattraper les notices touchées durant le processus. Le mécanisme d'`alias` permet la commutation d'indexes à chaud.
 
-
 ----------------
+
 ## Etape 3: l'interface utilisateur
 
 ### But
@@ -330,7 +332,7 @@ my_instance collect    # récolte les fichiers statiques
 #### Exercice
 
 1. Créer les répertoires `static/images` dans l'instance
-2. Copier le logo [https://gitlab.rero.ch/rero-projects/invenio-survival-guide/raw/master/workshop/data/logo.png](https://gitlab.rero.ch/rero-projects/invenio-survival-guide/raw/master/workshop/data/logo.png) dans le répertoire crée
+2. Copier le logo [https://github.com/rero/invenio-survival-guide/raw/master/workshop/data/logo.png](https://github.com/rero/invenio-survival-guide/raw/master/workshop/data/logo.png) dans le répertoire crée
 3. Ajouter le logo au site (variable `THEME_LOGO`)
 
 __[La Solution](solutions/logo.md#changer-le-logo)__
@@ -374,7 +376,7 @@ echo "SEARCH_UI_JSTEMPLATE_RESULTS = \
 
 1. Modifier le fichier de `template` pour afficher les différents champs de la notice
 
-__[La Solution](solutions/detailed_view.md#ajustement-de-la-pr-sentation-des-r-sultats)__
+__[La Solution](solutions/detailed_view.md#ajustement-de-la-présentation-des-résultats)__
 
 #### Discussion
 
@@ -396,7 +398,7 @@ S’inspirer du point précédent pour installer le template des facettes conten
 2. ajouter la configuration
 3. modifier le fichier de template pour ne pas afficher la facette `years`
 
-__[La Solution](solutions/facets_view.md##ajustement-la-pr-sentation-de-la-facette)__
+__[La Solution](solutions/facets_view.md##ajustement-la-présentation-de-la-facette)__
 
 ## Conclusion
 
