@@ -2,7 +2,7 @@
 
 ## Examples
 
-Cf. [examples/sqlachemy](examples/sqlalchemy) directory for:
+Cf. [examples/sqlachemy](../examples/sqlalchemy) directory for:
 
   * howto create a connection
   * howto create tables
