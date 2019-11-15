@@ -61,6 +61,10 @@ Feel free to add:
 - [less](web/less.md)
 - [redis](web/redis.md)
 
+#### [Translation](translation/README.md)
+
+- [how to add a new language](translation/add-language.md)
+
 #### [Workshop](workshop/workshop1.md)
 
 - [workshop1 (2016/12/21)](workshop/workshop1.md#workshop-1)
