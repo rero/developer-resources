@@ -11,6 +11,11 @@ Feel free to add:
 
 ### Table of Content
 
+#### [Guidelines](./guidelines/README.md)
+
+- [python dependencies management](guidelines/python-dependencies.md)
+- [JSON schemas](guidelines/json-schemas.md)
+
 #### [Base](./base/README.md)
 
 - [babel](base/babel.md)
