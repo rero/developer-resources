@@ -17,6 +17,7 @@ Feel free to add:
 - [Development environment installation](guidelines/dev_installation.md)
 - [python dependencies management](guidelines/python-dependencies.md)
 - [UI integration](guidelines/ui-integration.md): how to integrate UI in RERO-ILS
+- [pull requests](guidelines/pull-requests.md)
 
 ### [Base](./base/README.md)
 
