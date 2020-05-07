@@ -9,14 +9,14 @@ Feel free to add:
   * examples
   * etc.
 
-### Table of Content
+## Table of Content
 
-#### [Guidelines](./guidelines/README.md)
+### [Guidelines](./guidelines/README.md)
 
 - [python dependencies management](guidelines/python-dependencies.md)
 - [JSON schemas](guidelines/json-schemas.md)
 
-#### [Base](./base/README.md)
+### [Base](./base/README.md)
 
 - [babel](base/babel.md)
 - [docker](base/docker.md)
@@ -26,7 +26,7 @@ Feel free to add:
 - [pytest](base/pytest.md)
 - [python](base/python.md)
 
-#### [Database](database/README.md)
+### [Database](database/README.md)
 
 - [invenio-db](database/invenio-db.md)
 - [invenio-pidstore](database/invenio-pidstore.md)
@@ -34,7 +34,7 @@ Feel free to add:
 - [sqlalchemy](database/sqlalchemy.md)
 - [uuid](database/uuid.md)
 
-#### [Indexing](indexing/README.md)
+### [Indexing](indexing/README.md)
 
 - [celery](indexing/celery.md)
 - [elasticsearch-dsl](indexing/elasticsearch-dsl.md)
@@ -43,7 +43,7 @@ Feel free to add:
 - [invenio-records-rest](indexing/invenio-records-rest.md)
 - [invenio-search](indexing/invenio-search.md)
 
-#### [Data](data/README.md)
+### [Data](data/README.md)
 
 - [dojson](data/dojson.md)
 - [invenio-jsonschemas](data/invenio-jsonschemas.md)
@@ -51,7 +51,12 @@ Feel free to add:
 - [json](data/json.md)
 - [jsonschema](data/jsonschema.md)
 
-#### [Web](web/README.md)
+### [Documenting the projects](documenting/README.md)
+
+- [how to generate a changelog](documenting/generate-changelog.md)
+
+
+### [Web](web/README.md)
 
 - [angular-js](web/angular-js.md)
 - [angular-schema-form](web/angular-schema-form.md)
@@ -66,10 +71,10 @@ Feel free to add:
 - [less](web/less.md)
 - [redis](web/redis.md)
 
-#### [Translation](translation/README.md)
+### [Translation](translation/README.md)
 
 - [how to add a new language](translation/add-language.md)
 
-#### [Workshop](workshop/workshop1.md)
+### [Workshop](workshop/workshop1.md)
 
 - [workshop1 (2016/12/21)](workshop/workshop1.md#workshop-1)
