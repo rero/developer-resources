@@ -39,6 +39,7 @@ mark.
 ## String
 
 - Strings always set the `minLength` property, and if relevant the `maxLength`.
+- If the `pattern` property is set and requires at least one character, the `minLength` property is not mandatory.
 
 ## Array
 
