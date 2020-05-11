@@ -38,7 +38,8 @@ mark.
 
 ## String
 
-- Strings always set the `minLength` property, and if relevant the `maxLength`.
+- Always set the `minLength` and `maxLength` property. Adapt the ES mapping
+  accordingly (see [ES doc on `ignore_above`](https://www.elastic.co/guide/en/elasticsearch/reference/current/ignore-above.html))
 - If the `pattern` property is set and requires at least one character, the `minLength` property is not mandatory.
 
 ## Array
