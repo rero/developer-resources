@@ -9,7 +9,19 @@ section.
 
 ## Order
 
-[To be completed. Try to normalize the order inside a JSON schema object].
+Properties are ordered like this:
+
+1. title
+2. description
+3. type
+4. default (Default value)
+5. Constraints (e.g. *minLength* or *pattern* or *minItems*)
+6. additionalProperties (Only for objects)
+7. properties (Only for objects)
+8. propertiesOrder (Only for objects)
+9. required (Only for objects)
+10. items (Only for arrays)
+11. form (Editor specific behavior)
 
 ## `$schema` property
 
