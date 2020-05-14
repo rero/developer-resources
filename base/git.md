@@ -5,6 +5,7 @@ Git is a free and open source distributed version control system designed to han
 ## Configuration
 
 Set user name and email for signed message:
+
 ```bash
 git config --global user.name "John Doe"               # set username for all git projects
 git config --global user.email johndoe@example.com     # set email for all git projects
@@ -13,6 +14,7 @@ git config --global user.email johndoe@example.com     # set email for all git p
 ## Main Commands
 
 Basic commands:
+
 ```bash
 git clone <repository>   # get a local copy of a git project
 git commit -s -a         # commit all changes with a signature
@@ -28,7 +30,9 @@ readable messages** that are easy to follow when looking through the **project h
 we use the git commit messages to **generate the AngularJS change log**.
 
 The commit message formatting can be added using a typical git workflow.
+
 ### Commit Message Format
+
 Each commit message consists of a **header**, a **body** and a **footer**.  The header has a special
 format that includes a **type**, a **scope** and a **subject**:
 
@@ -44,9 +48,11 @@ Any line of the commit message cannot be longer 100 characters! This allows the 
 to read on GitHub as well as in various git tools.
 
 ### Revert
+
 If the commit reverts a previous commit, it should begin with `revert: `, followed by the header of the reverted commit. In the body it should say: `This reverts commit <hash>.`, where the hash is the SHA of the commit being reverted.
 
 ### Type
+
 Must be one of the following:
 
 * **feat**: A new feature
@@ -61,6 +67,7 @@ Must be one of the following:
   generation
 
 ### Scope
+
 The scope should correspond to a category such as for Invenio:
 
 - theme
@@ -69,6 +76,7 @@ The scope should correspond to a category such as for Invenio:
 - etc.
 
 ### Subject
+
 The subject contains succinct description of the change:
 
 * use the imperative, present tense: "change" not "changed" nor "changes"
@@ -76,6 +84,7 @@ The subject contains succinct description of the change:
 * no dot (.) at the end
 
 ### Body
+
 Just as in the **subject**, use the imperative, present tense: "change" not "changed" nor "changes".
 The body should include the motivation for the change and contrast this with previous behavior.
 

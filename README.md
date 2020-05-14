@@ -13,8 +13,10 @@ Feel free to add:
 
 ### [Guidelines](./guidelines/README.md)
 
-- [python dependencies management](guidelines/python-dependencies.md)
 - [JSON schemas](guidelines/json-schemas.md)
+- [Development environment installation](guidelines/dev_installation.md)
+- [python dependencies management](guidelines/python-dependencies.md)
+- [UI integration](guidelines/ui-integration.md): how to integrate UI in RERO-ILS
 
 ### [Base](./base/README.md)
 
@@ -23,6 +25,8 @@ Feel free to add:
 - [git](base/git.md)
 - [invenio](base/invenio.md)
 - [markdown](base/markdown.md)
+- [poetry](base/poetry.md)
+- pyenv
 - [pytest](base/pytest.md)
 - [python](base/python.md)
 
@@ -33,6 +37,13 @@ Feel free to add:
 - [invenio-records](database/invenio-records.md)
 - [sqlalchemy](database/sqlalchemy.md)
 - [uuid](database/uuid.md)
+
+### Debug
+
+Art of debugging
+
+- pdb
+- [RERO-ils specifics](debug/rero-ils-specifics.md)
 
 ### [Indexing](indexing/README.md)
 
