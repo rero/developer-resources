@@ -11,14 +11,6 @@ Feel free to add:
 
 ## Table of Content
 
-### [Guidelines](./guidelines/README.md)
-
-- [JSON schemas](guidelines/json-schemas.md)
-- [Development environment installation](guidelines/dev_installation.md)
-- [python dependencies management](guidelines/python-dependencies.md)
-- [UI integration](guidelines/ui-integration.md): how to integrate UI in RERO-ILS
-- [pull requests](guidelines/pull-requests.md)
-
 ### [Base](./base/README.md)
 
 - [babel](base/babel.md)
@@ -30,6 +22,14 @@ Feel free to add:
 - pyenv
 - [pytest](base/pytest.md)
 - [python](base/python.md)
+
+### [Data](data/README.md)
+
+- [dojson](data/dojson.md)
+- [invenio-jsonschemas](data/invenio-jsonschemas.md)
+- [invenio-marc21](data/invenio-marc21.md)
+- [json](data/json.md)
+- [jsonschema](data/jsonschema.md)
 
 ### [Database](database/README.md)
 
@@ -46,6 +46,16 @@ Art of debugging
 - pdb
 - [RERO-ils specifics](debug/rero-ils-specifics.md)
 
+
+### [Documenting the projects](documenting/README.md)
+
+- [how to generate a changelog](documenting/generate-changelog.md)
+
+### [Guidelines](./guidelines/README.md)
+
+- [JSON schemas](guidelines/json-schemas.md)
+- [Pull Request creation](guidelines/pull-rquests.md)
+
 ### [Indexing](indexing/README.md)
 
 - [celery](indexing/celery.md)
@@ -55,18 +65,20 @@ Art of debugging
 - [invenio-records-rest](indexing/invenio-records-rest.md)
 - [invenio-search](indexing/invenio-search.md)
 
-### [Data](data/README.md)
+### [RERO instances](rero-instances/README.md)
 
-- [dojson](data/dojson.md)
-- [invenio-jsonschemas](data/invenio-jsonschemas.md)
-- [invenio-marc21](data/invenio-marc21.md)
-- [json](data/json.md)
-- [jsonschema](data/jsonschema.md)
+### [RERO ILS](rero-instances/README.md#rero-ils)
 
-### [Documenting the projects](documenting/README.md)
+- [Development environment installation](rero-instances/rero-ils/dev_installation.md)
 
-- [how to generate a changelog](documenting/generate-changelog.md)
+#### [RERO ILS UI](rero-instances/README.md#rero-ils-ui)
 
+- [UI integration](rero-instances/rero-ils-ui/ui-integration.md):
+  how to integrate UI in RERO-ILS
+
+### [Translation](translation/README.md)
+
+- [how to add a new language](translation/add-language.md)
 
 ### [Web](web/README.md)
 
@@ -83,10 +95,4 @@ Art of debugging
 - [less](web/less.md)
 - [redis](web/redis.md)
 
-### [Translation](translation/README.md)
-
-- [how to add a new language](translation/add-language.md)
-
-### [Workshop](workshop/workshop1.md)
-
-- [workshop1 (2016/12/21)](workshop/workshop1.md#workshop-1)
+### [workshop1 (2016/12/21)](workshop/workshop1.md#workshop-1)
