@@ -16,6 +16,7 @@ Feel free to add:
 - [babel](base/babel.md)
 - [docker](base/docker.md)
 - [git](base/git.md)
+- [imports](base/imports.md)
 - [invenio](base/invenio.md)
 - [markdown](base/markdown.md)
 - [poetry](base/poetry.md)
