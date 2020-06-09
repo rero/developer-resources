@@ -48,14 +48,15 @@ Art of debugging
 - [RERO-ils specifics](debug/rero-ils-specifics.md)
 
 
-### [Documenting the projects](documenting/README.md)
+### [Documentation of the projects](documentation/README.md)
 
-- [how to generate a changelog](documenting/generate-changelog.md)
+- [how to generate a changelog](documentation/generate-changelog.md)
 
-### [Guidelines](./guidelines/README.md)
+### [Guidelines and procedures](./guidelines/README.md)
 
 - [JSON schemas](guidelines/json-schemas.md)
 - [Pull Request creation](guidelines/pull-rquests.md)
+- [How to publish a release](guidelines/release-publication.md)
 
 ### [Indexing](indexing/README.md)
 

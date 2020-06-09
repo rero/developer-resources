@@ -1,7 +1,5 @@
 # JSON schemas
 
-:warning: **To be completed!**
-
 These guidelines are also related to the
 [UX charter](https://github.com/rero/rero-ils/wiki/UX-charter), specifically
 the [Form design](https://github.com/rero/rero-ils/wiki/UX-charter#4-form-design)
