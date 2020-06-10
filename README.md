@@ -18,6 +18,7 @@ Feel free to add:
 - [git](base/git.md)
 - [imports](base/imports.md)
 - [invenio](base/invenio.md)
+- [invenio-circulation](base/invenio-circulation.md) module
 - [markdown](base/markdown.md)
 - [poetry](base/poetry.md)
 - pyenv
