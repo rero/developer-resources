@@ -9,7 +9,7 @@
 1. Update `rero_ils/version.py`.
 1. Update `pyproject.yml`.
 1. Update the `CHANGES.rst` file (check 
-   [how to generate it](generate-changelog.md)). To do this, you need to be
+   [how to generate it][1]. To do this, you need to be
    sure that no PR will be added to the `dev` branch.
 1. Update the `RELEASE-NOTES.rst`:
     - Write a release notes (summary of the commits) in a MD file.
@@ -33,6 +33,8 @@
    your situation: "Find the comprehensive release note on the RELEASE-NOTES.rst
    file: https://github.com/rero/rero-ils/blob/master/RELEASE-NOTES.rst#v0XX" 
    and publish it as release.
+
+[1]: /documentation/generate-changelog.md
 
 ## RERO ILS UI
 
