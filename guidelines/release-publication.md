@@ -40,4 +40,24 @@
 
 ## NG-CORE
 
-:construction: To be completed.
+1. Update the `version` property in `package.json` file.
+1. Update the `version` property in `projects/rero/ng-core/package.json` file.
+1. Run the command `npm i` to update `package-lock.json` file.
+1. Commit the changes on dev or on a specific branch and specify changes in 
+   commit message.
+1. If a pull request is created and validated, merge it into `dev`.
+1. Checkout to your local `dev` branch, make sure it's up to date with the
+   remote `dev`.
+1. Build library with the command `ng build @rero/ng-core`.
+1. Go to generated library with command `cd dist/rero/ng-core`.
+1. Check version is correct in `package.json` in the current folder.
+1. Execute `npm publish` to publish library in npm registry. You must be logged 
+   in npm and the user has to belong to `rero` organisation (Check with IT to get access).
+1. Go back to root folder.
+1. Checkout to your local `master` branch, make sure it's up to date with the
+   remote `master`.
+1. Merge the `dev` branch into master: `git merge --ff-only dev`.
+1. Tag the last commit: `git tag -s -m "v0.X.X" v0.X.X`. (`-s` is to sign the
+   tag with your GPG key, it's optional).
+1. Push the local `master` branch to remote, with the tag: `git push --tags
+   <rero-remote-repository-name> master`.
