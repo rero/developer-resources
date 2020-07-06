@@ -52,6 +52,7 @@ Art of debugging
 ### [Documentation of the projects](documentation/README.md)
 
 - [how to generate a changelog](documentation/generate-changelog.md)
+- [how to configure editors](documentation/editor-configurations.md)
 
 ### [Guidelines and procedures](./guidelines/README.md)
 
