@@ -14,6 +14,7 @@ Feel free to add:
 ### [Base](./base/README.md)
 
 - [babel](base/babel.md)
+- [cypress](base/cypress.md)
 - [docker](base/docker.md)
 - [git](base/git.md)
 - [imports](base/imports.md)
