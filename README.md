@@ -77,6 +77,7 @@ Art of debugging
 
 #### [RERO ILS UI](rero-instances/README.md#rero-ils-ui)
 
+- [Migrate from a NodeJS version to another](web/nvm.md#migration)
 - [UI integration](rero-instances/rero-ils-ui/ui-integration.md):
   how to integrate UI in RERO-ILS
 
@@ -97,6 +98,7 @@ Art of debugging
 - [invenio-theme](web/invenio-theme.md)
 - [invenio-user-management](web/invenio-user.md)
 - [less](web/less.md)
+- [nvm](web/nvm.md)
 - [redis](web/redis.md)
 
 ### [workshop1 (2016/12/21)](workshop/workshop1.md#workshop-1)
