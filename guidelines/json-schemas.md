@@ -1,9 +1,12 @@
 # JSON schemas
 
-These guidelines are also related to the
-[UX charter](https://github.com/rero/rero-ils/wiki/UX-charter), specifically
-the [Form design](https://github.com/rero/rero-ils/wiki/UX-charter#4-form-design)
+These guidelines are also related to the [UX
+charter](https://github.com/rero/rero-ils/wiki/Usability-charter),
+specifically the [Form
+design](https://github.com/rero/rero-ils/wiki/Usability-charter#4-form-design)
 section.
+
+:warning: Form options shoud be documented, somewhere.
 
 ## Order
 
