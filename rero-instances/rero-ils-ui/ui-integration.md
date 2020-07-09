@@ -1,31 +1,30 @@
 # How to integrate UI in RERO-ils
 
-## Latest version
+## From NPM latest published version
 
-To install latest version published on npm:
+If you want to use the last NPM published version, do:
 
-`cd path/to/invenio/instance/folder/static`
-
-`npm install @rero/rero-ils-ui@latest`
+```bash
+cd path/to/invenio/instance/folder/static
+npm install @rero/rero-ils-ui@latest
+```
 
 ## From a PR
 
-### In RERO-ILS-UI
+This should be done in several steps.
 
-First:
+First, in rero-ils-ui:
 
 ```bash
+cd path/to/rero-ils-ui
 git checkout rero/pr/xxx
 npm install
 npm run pack
 ```
 
-Then copy rero-rero-ils-ui-0.0.x.tgz into RERO-ils directory.
-
-### In RERO-ILS
-
-And finally:
+Then use **bootstrap script** with this new file:
 
 ```bash
-poetry run bootstrap -t path/to/rero-rero-ils-ui-0.0.x.tgz
+cd path/to/rero-ils
+poetry run bootstrap -t ../rero-ils-ui/rero-rero-ils-ui-0.0.x.tgz
 ```
