@@ -1,6 +1,8 @@
 # Developer Resources
 
-This documentation will be a good starting point for RERO-ILS projects. This will try to summary technologies and modules used to create an Invenio application, and more specifically a RERO-ILS application.
+This documentation will be a good starting point for RERO-ILS projects. This
+will try to summary technologies and modules used to create an [Invenio
+application][1], and more specifically a [RERO ILS application][2].
 
 Feel free to add:
 
@@ -8,6 +10,9 @@ Feel free to add:
   * documentation about each technologies
   * examples
   * etc.
+
+[1]: https://invenio.readthedocs.io
+[2]: https://github.com/rero/rero-ils
 
 ## Table of Content
 
@@ -28,10 +33,8 @@ Feel free to add:
 
 ### [Data](data/README.md)
 
-- [dojson](data/dojson.md)
-- [invenio-jsonschemas](data/invenio-jsonschemas.md)
-- [invenio-marc21](data/invenio-marc21.md)
-- [json](data/json.md)
+All about the data model and the schemas.
+
 - [jsonschema](data/jsonschema.md)
 
 ### [Database](database/README.md)
@@ -57,7 +60,8 @@ Art of debugging
 
 ### [Guidelines and procedures](./guidelines/README.md)
 
-- [JSON schemas](guidelines/json-schemas.md)
+List guidelines, checklist and procedures.
+
 - [Pull Request creation](guidelines/pull-rquests.md)
 - [How to publish a release](guidelines/release-publication.md)
 
