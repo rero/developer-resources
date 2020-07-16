@@ -36,11 +36,13 @@ Feel free to add:
 
 ### [Database](database/README.md)
 
+All database stuffs.
+
 - [invenio-db](database/invenio-db.md)
 - [invenio-pidstore](database/invenio-pidstore.md)
 - [invenio-records](database/invenio-records.md)
 - [sqlalchemy](database/sqlalchemy.md)
-- [uuid](database/uuid.md)
+    - examples: [database/examples/](database/examples/)
 
 ### Debug
 
