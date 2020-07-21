@@ -3,7 +3,10 @@
 ## RERO ILS
 
 1. In another PR/commit, verify that there's no more strings to be extracted,
-   that the available transifex translations have been integrated.
+   and that the available weblate translations have been integrated. See the
+   [weblate workflow][2]. Make sure this PR or commit is integrated to the
+   `dev` branch before integrating the release commit (below).
+1. Make sure your local repository is up to date with remote (`git fetch`).
 1. Update, if necessary, `rero_ils/bundles.py` with the `rero-ils-ui` used
    version.
 1. Update `rero_ils/version.py`.
@@ -12,7 +15,8 @@
    [how to generate it][1]. To do this, you need to be
    sure that no PR will be added to the `dev` branch.
 1. Update the `RELEASE-NOTES.rst`:
-    - Write a release notes (summary of the commits) in a MD file.
+    - Write a release notes (summary of the commits) in a MD file. Read the
+      RERO ILS and the RERO ILS UI commits since the last existing tag.
     - Convert the Markdown in ReStructuredText with `pandoc`:
   `pandoc -t rst --reference-links -o <destination>.rst <your-file>.md`.
     - Copy the content of the `.rst` file as a new section in the
@@ -24,7 +28,7 @@
    carefully that the commits, commit hashes are the same.
 1. Checkout to your local `master` branch, make sure it's up to date with the
    remote `master`.
-1. Merge the `dev` branch into master: `git merge --ff-only dev`.
+1. Merge your local `dev` branch into your local `master`: `git merge --ff-only dev`.
 1. Tag the last commit: `git tag -s -m "v0.X.X" v0.X.X`. (`-s` is to sign the
    tag with your GPG key, it's optional).
 1. Push the local `master` branch to remote, with the tag: `git push --tags
@@ -35,6 +39,7 @@
    and publish it as release.
 
 [1]: /documentation/generate-changelog.md
+[2]: /translations/translations-workflow.md
 
 ## RERO ILS UI
 
