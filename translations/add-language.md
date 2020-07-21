@@ -1,5 +1,7 @@
 # How to add a new language
 
+:warning: This should be updated!
+
 This guide is tested for RERO-ILS v0.5.2
 
 ### Step 1 : translations for RERO-ILS
