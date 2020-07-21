@@ -33,10 +33,11 @@
    tag with your GPG key, it's optional).
 1. Push the local `master` branch to remote, with the tag: `git push --tags
    <rero-remote-repository-name> master`.
-1. On github, edit the corresponding tag with the following content, adapted to
-   your situation: "Find the comprehensive release note on the RELEASE-NOTES.rst
-   file: https://github.com/rero/rero-ils/blob/master/RELEASE-NOTES.rst#v0XX" 
-   and publish it as release.
+1. On github, edit the corresponding tag (that means publishing a new release)
+   with the following content, adapted to your situation: "Find the
+   comprehensive release note on the RELEASE-NOTES.rst file:
+   https://github.com/rero/rero-ils/blob/master/RELEASE-NOTES.rst#v0XX" and
+   publish it as release.
 
 [1]: /documentation/generate-changelog.md
 [2]: /translations/translations-workflow.md
