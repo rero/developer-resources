@@ -78,6 +78,10 @@ List guidelines, checklist and procedures.
 
 ### [RERO instances](rero-instances/README.md)
 
+### [ng-core](rero-instances/README.md#ng-core)
+
+- [How to check result from ng-core into RERO ILS](rero-instances/ng-core/ng-core-integration.md)
+
 ### [RERO ILS](rero-instances/README.md#rero-ils)
 
 - [Development environment installation](rero-instances/rero-ils/dev_installation.md)
