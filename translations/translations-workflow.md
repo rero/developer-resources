@@ -109,7 +109,7 @@ The section 2 could be scripted, once it's validated.
 - On the language overview of each component, there are some links to strings grouped by
   status: translated, to be reviewed, needing actions, and so on. This is
   actually useful.
-- In the same spirit, one a string is selected,
+- In the same spirit, once a string is selected,
     - on the right of the editor, you may have some information: on top a
       glossary, if any, and on the bottom links to the source code, if it can
       help to understand the context.
@@ -122,6 +122,7 @@ The section 2 could be scripted, once it's validated.
           languages,
         - history.
 
+![](intro_weblate.jpg)
 
 
 
