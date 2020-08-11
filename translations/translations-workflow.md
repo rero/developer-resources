@@ -87,7 +87,7 @@ the following:
 
 The section 2 could be scripted, once it's validated.
 
- ## Some weblate settings
+## Some weblate settings
 
 - [component/settings/version control] Merge Style: rebase.
 - [component/settings/version control] Age of changes to commit: 24 [hour].
@@ -99,6 +99,14 @@ The section 2 could be scripted, once it's validated.
 - [component/settings/files]: filter: `^(?!(messages)$).+$` (for `sonar-ui`).
   The same as the precedent setting, but adapted to the `sonar-ui`
   configuration.
+- on each component, [addons]:
+    - automatic translations, suggest strings for non translated strings, use
+      machine translations (deepl, weblate, weblate translation memory), with
+      80 thresold.
+    - squash git commits, per language, add contributors in the commit message,
+      copy paste the regular commit message.
+    - only for JSON based component, customize JSON output, with 2 space for
+      indentation.
 
 ## Tips for the translators
 
