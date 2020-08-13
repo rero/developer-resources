@@ -2,7 +2,7 @@
 
 ## Examples
 
-Cf. [/database/examples][1] directory for:
+Cf. [/data/examples][1] directory for:
 
   * howto create a connection
   * howto create tables
@@ -11,4 +11,4 @@ Cf. [/database/examples][1] directory for:
   * howto play with rollback
 
 
-[1]: /database/examples
+[1]: /data/examples/

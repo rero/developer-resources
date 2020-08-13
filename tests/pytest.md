@@ -52,6 +52,6 @@ py.test tests/test_app.py         # run one file tests
 addopts = --pep8 --ignore=docs --cov=simple_app --cov-report=term-missing
 ```
 
-# References
+## References
 
 1. [pytest](http://doc.pytest.org/)

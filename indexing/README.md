@@ -1,3 +1,0 @@
-# Indexing
-
-Search engine technologies.

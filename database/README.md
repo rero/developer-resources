@@ -1,3 +1,0 @@
-# Database
-
-All database stuffs.
