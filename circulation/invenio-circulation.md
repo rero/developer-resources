@@ -2,7 +2,10 @@
 
 `invenio-circulation` is a module used in RERO-ils to manage item loans.
 
-RERO have a specific repository to develop and enhance `invenio-circulation` module. You can find [RERO circulation on Github](https://github.com/rero/developer-resources).
+RERO have a specific repository to develop and enhance `invenio-circulation`
+module. You can find documentation on [RERO circulation module][1].
+
+[1]: /circulation/circulation-module.md 
 
 # Install and test
 

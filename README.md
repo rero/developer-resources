@@ -16,100 +16,120 @@ Feel free to add:
 
 ## Table of Content
 
-### [Base](./base/README.md)
+### [Circulation](circulation/)
 
-- [babel](base/babel.md)
-- [cypress](base/cypress.md)
-- [docker](base/docker.md)
-- [git](base/git.md)
-- [imports](base/imports.md)
-- [invenio](base/invenio.md)
-- [invenio-circulation](base/invenio-circulation.md) module
-- [markdown](base/markdown.md)
-- [poetry](base/poetry.md)
-- pyenv
-- [pytest](base/pytest.md)
-- [python](base/python.md)
+- [invenio-circulation module](circulation/invenio-circulation.md)
+- [RERO-ILS circulation module](circulation/circulation-module.md)
+
+### [Coding](coding/)
+
+- [python](coding/python.md)
+- [imports](coding/python-imports.md)
+- python-debug (pdb)
+- [RERO-ils specifics](coding/rero-ils-debug-specifics.md)
+- [how to configure editors](coding/editor-configurations.md)
 
 ### [Data](data/README.md)
 
-All about the data model and the schemas.
+- [Data graph generation](data/data-graph-generation.md): generate graph to
+  visualize data structure
+- [Resource relations](data/resource-relations.md)
+
+#### Data model
 
 - [jsonschema](data/jsonschema.md)
+- [guidelines on how to write a JSON schema](data/jsonschema.md#guidelines)
+- [checklist](data-model-checklist.md) for implementing a new field in the
+  data model
 
-### [Database](database/README.md)
+
+#### [Database](data/README.md#database)
 
 All database stuffs.
 
-- [invenio-db](database/invenio-db.md)
-- [invenio-pidstore](database/invenio-pidstore.md)
-- [invenio-records](database/invenio-records.md)
-- [sqlalchemy](database/sqlalchemy.md)
-    - examples: [database/examples/](database/examples/)
+- [invenio-db](data/invenio-db.md)
+- [invenio-pidstore](data/invenio-pidstore.md)
+- [invenio-records](data/invenio-records.md)
+- [sqlalchemy](data/sqlalchemy.md)
+    - examples: [data/examples/](data/examples/)
+- [PID reservation (CLI)](data/pid-reservation.md)
 
-### Debug
+#### [Indexing](data/README.md#indexing)
 
-Art of debugging
-
-- pdb
-- [RERO-ils specifics](debug/rero-ils-specifics.md)
-
+- [elasticsearch](data/elasticsearch.md)
+- [invenio-indexer](data/invenio-indexer.md)
+- [invenio-records-rest](data/invenio-records-rest.md)
+- [invenio-search](data/invenio-search.md)
 
 ### [Documentation of the projects](documentation/README.md)
 
 - [how to generate a changelog](documentation/generate-changelog.md)
-- [how to configure editors](documentation/editor-configurations.md)
 
-### [Guidelines and procedures](./guidelines/README.md)
+### Git & GitHub
 
-List guidelines, checklist and procedures.
+- [git](git-github/git.md)
+- [git workflow](git-github/workflow.md)
+- [pull request creation](git-github/pull-rquests.md)
 
-- [Pull Request creation](guidelines/pull-rquests.md)
-- [How to publish a release](guidelines/release-publication.md)
+### Interface
 
-### [Indexing](indexing/README.md)
+- [invenio-assets](interface/invenio-assets.md)
+- [invenio-theme](interface/invenio-theme.md)
+- [invenio-records-ui](interface/invenio-records-ui.md)
+- [invenio-search-ui](interface/invenio-search-ui.md)
+- [nvm](interface/nvm.md)
+- [layout charter](interface/layout-charter.md)
+- [layout for document views (textual
+  representation)](interface/layout-document-views.md)
+- [Organisation views layout
+  customization](interface/org-layout-customization.md)
 
-- [celery](indexing/celery.md)
-- [elasticsearch-dsl](indexing/elasticsearch-dsl.md)
-- [elasticsearch](indexing/elasticsearch.md)
-- [invenio-indexer](indexing/invenio-indexer.md)
-- [invenio-records-rest](indexing/invenio-records-rest.md)
-- [invenio-search](indexing/invenio-search.md)
+### Invenio
 
-### [RERO instances](rero-instances/README.md)
+- [invenio](invenio/invenio.md)
+- [workshop1 (2016/12/21)](invenio/workshop1.md)
 
-### [ng-core](rero-instances/README.md#ng-core)
+### Lexicon
+
+- [Lexicon](lexicon/lexicon.md)
+
+### Permissions
+
+- [invenio-user-management](permissions/invenio-user.md)
+
+### [RERO projects and instances](rero-instances/README.md)
+
+- pyenv
+- [docker](rero-instances/docker.md)
+- [poetry](rero-instances/poetry.md)
+- [How to publish a release](rero-instances/release-publication.md)
+- [`russian_dolls`][1]: to install `ng-core` in `rero-ils-ui` and `rero-ils-ui`
+  in `rero-ils`.
+
+[1]: https://github.com/rero/rero-ils/blob/dev/scripts/russian_dolls
+
+#### [ng-core](rero-instances/README.md#ng-core)
 
 - [How to check result from ng-core into RERO ILS](rero-instances/ng-core/ng-core-integration.md)
 
-### [RERO ILS](rero-instances/README.md#rero-ils)
+#### [RERO ILS](rero-instances/README.md#rero-ils)
 
 - [Development environment installation](rero-instances/rero-ils/dev_installation.md)
 
 #### [RERO ILS UI](rero-instances/README.md#rero-ils-ui)
 
-- [Migrate from a NodeJS version to another](web/nvm.md#migration)
+- [Useful commands](rero-instances/useful-commands.md)
+- [Migrate from a NodeJS version to another](interface/nvm.md#migration)
 - [UI integration](rero-instances/rero-ils-ui/ui-integration.md):
   how to integrate UI in RERO-ILS
 
+### Tests
+
+- [pytest](tests/pytest.md)
+- [cypress](tests/cypress.md)
+- RERO ILS [data for tests](tests/data-for-tests.md)
+
 ### [Translation](translation/README.md)
 
+- [babel](translations/babel.md)
 - [how to add a new language](translation/add-language.md)
-
-### [Web](web/README.md)
-
-- [angular-js](web/angular-js.md)
-- [angular-schema-form](web/angular-schema-form.md)
-- [bootstrap](web/bootstrap.md)
-- [flask](web/flask.md)
-- [invenio-assets](web/invenio-assets.md)
-- [invenio-formatter](web/invenio-formatter.md)
-- [invenio-records-ui](web/invenio-records-ui.md)
-- [invenio-search-ui](web/invenio-search-ui.md)
-- [invenio-theme](web/invenio-theme.md)
-- [invenio-user-management](web/invenio-user.md)
-- [less](web/less.md)
-- [nvm](web/nvm.md)
-- [redis](web/redis.md)
-
-### [workshop1 (2016/12/21)](workshop/workshop1.md#workshop-1)
