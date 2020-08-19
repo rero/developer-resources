@@ -96,6 +96,7 @@ All database stuffs.
 ### Permissions
 
 - [invenio-user-management](permissions/invenio-user.md)
+- [Generate access token](permissions/generate_oauth_token.md)
 
 ### [RERO projects and instances](rero-instances/README.md)
 
