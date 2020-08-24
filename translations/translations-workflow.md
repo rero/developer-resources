@@ -6,6 +6,7 @@
 1. [The *very* first time][7]
 1. [The regular workflow][3]
 1. [Some weblate settings][5]
+1. [Troubleshootings][11]
 1. [Tips for the translators][8] 
 
 ## Introduction
@@ -42,6 +43,9 @@ merged into the `dev` branch of the corresponding GitHub project:
 4. Inform the translators that weblate is ready.
 
 ## The regular workflow
+
+:warning: **This workflow is not confirmed by the weblate usage, so it has to
+be amended**.
 
 For the synchronisation workflow, it's semi automatic:
 
@@ -108,6 +112,18 @@ The section 2 could be scripted, once it's validated.
     - only for JSON based component, customize JSON output, with 2 space for
       indentation.
 
+## Troubleshootings
+
+- If, for any reason, the github branch that has been define as a weblate
+  corresponding branch (Composant settings, Version control, Repository
+  branch), has been forced push, **use the reset command either on the weblate
+  web interface, or with the `wlc` client**.
+- At leat once, changes couldn't be committed if the remote repository branch
+  moved. Apparently weblate wait until the local branch is up to date with the
+  remote branch *before* committing changes. Changes that aren't committed will
+  be lost when the local branch is going to be updated. **As a result, we may
+  need a translation dedicated branch on the remote repository (github)**.
+
 ## Tips for the translators
 
 - Have a look, even shortly to the [weblate documentation][9]:
@@ -147,3 +163,4 @@ The section 2 could be scripted, once it's validated.
 [8]: #tips-for-the-translators
 [9]: https://docs.weblate.org
 [10]: https://docs.weblate.org/en/latest/user/translating.html
+[11]: #troubleshootings
