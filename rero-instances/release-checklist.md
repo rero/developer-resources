@@ -10,5 +10,10 @@ This is mainly in the context of RERO ILS.
    numbers, the changelog, release notes, commit the changes, tag the commit,
    publish the release.
 
+After the release:
+
+1. Ask a dev to update dependencies in each projects.
+1. Ask a dev, in RERO and in UCLouvain to update the migration scripts.
+
 
 [1]: https://github.com/orgs/rero/projects/5
