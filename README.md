@@ -53,6 +53,7 @@ All database stuffs.
 - [sqlalchemy](data/sqlalchemy.md)
     - examples: [data/examples/](data/examples/)
 - [PID reservation (CLI)](data/pid-reservation.md)
+- [POST MARCXML via CURL and access token](data/post-marcxml-curl.md)
 
 #### [Indexing](data/README.md#indexing)
 
