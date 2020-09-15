@@ -11,6 +11,7 @@ This tool is integrated to RERO-ILS and the following documentation explains how
 * `FLASK_DEBUG=False poetry run server`
 
 Local server (localhost:5000) must be running and the database must contain data, as Cypress will use them to run the tests.
+Note that setting `FLASK_DEBUG` to false means that the server should be restarted to take changes into account.
 
 ## Quick installation
 
@@ -60,14 +61,24 @@ The test runner is described in details [here](https://docs.cypress.io/guides/co
 
 ### File organisation
 
-#### Base url
+#### Configuration
 
-The base url is stored in cypress.json file, as recommended in the [best practices](https://docs.cypress.io/guides/references/best-practices.html#Setting-a-global-baseUrl).
+The configuration of cypress is set in cypress.json file. The current settings are:
+* The base url, as recommended in the [best practices](https://docs.cypress.io/guides/references/best-practices.html#Setting-a-global-baseUrl)
+* The default command timeout
+* The response timeout (for API url)
+* The height and width of viewport (preview of the test)
 
 #### Custom commands
 
-In order to have re-usable code, some custom commands can be written here: **tests/e2e/cypress/cypress/support/commands.js**
+In order to have re-usable code, some custom commands are listed here: **tests/e2e/cypress/cypress/support**. They are sorted by type:
+* circulation.js
+* navigation.js
+* record.js
+* user.js
+* utils.js
 
+All these files must be declared in index.js to be able to use the commands in the project.
 For more informations, read the corresponding documentation [here](https://docs.cypress.io/api/cypress-api/custom-commands.html#Syntax).
 
 ### Selecting DOM elements
@@ -91,6 +102,30 @@ In countrary to what is said in [best practices](https://docs.cypress.io/guides/
 A list of assertions is available [here](https://docs.cypress.io/guides/references/assertions.html#BDD-Assertions).
 
 ## Tip & Tricks
+
+### Testing an asynchronous app
+
+In order to allow enough time to display the elements of the views, the default command timeout was set to 2 minutes.
+In some cases, a better solutions is needed: wait on an request and on its response. Here is a basic example:
+```
+// Start a server
+cy.server();
+
+// Provide a route with an alias (this needs to be done early enough to start to listen to the route before using it)
+cy.route({method: 'DELETE', url: '/api/items/*'}).as('deleteItem');
+
+// Do something that matches the route defined above
+cy.get('#item-' + this.itemBarcode + ' [name=buttons] > [name=delete]').click();
+cy.get('#modal-confirm-button').click();
+
+// Pass the route to wait for until the response
+cy.wait('@deleteItem');
+
+// The following commands will not run until the wait command resolves
+cy.deleteRecordFromDetailView();
+```
+
+The documentation describing the network requests and corresponding subjects can be found [here](https://docs.cypress.io/guides/guides/network-requests.html)
 
 ### Change BaseURL without editing `cypress.json`
 
