@@ -8,4 +8,6 @@ assuming that your token is: my_token and the xml record is saved in document.xm
 curl -k -L -H "Authorization: Bearer my_token"  -H 'Content-Type:application/marcxml+xml' --data-binary "@./document.xml" -POST https://~/api/documents/
 ```
 
-[How to generate an access token](permissions/generate_oauth_token.md)
+[How to generate an access token][1]
+
+[1]: /permissions/generate_oauth_token.md
