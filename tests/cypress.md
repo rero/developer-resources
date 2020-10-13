@@ -57,11 +57,7 @@ The path should be relative to cypress folder, for example: **./cypress/integrat
 
 The test runner is described in details [here](https://docs.cypress.io/guides/core-concepts/test-runner.html#Overview).
 
-## Writing the tests
-
-### File organisation
-
-#### Configuration
+## Configuration
 
 The configuration of cypress is set in cypress.json file. The current settings are:
 * The base url, as recommended in the [best practices](https://docs.cypress.io/guides/references/best-practices.html#Setting-a-global-baseUrl)
@@ -69,10 +65,29 @@ The configuration of cypress is set in cypress.json file. The current settings a
 * The response timeout (for API url)
 * The height and width of viewport (preview of the test)
 
+#### Change BaseURL without editing `cypress.json`
+
+Overriding options:
+
+You can override configuration options using `--config` flag. See the [documentation](https://docs.cypress.io/guides/references/configuration.html#Overriding-Options) for more information.
+
+```bash
+./node_modules/.bin/cypress open --config baseUrl=http://ilsdev.test.rero.ch
+```
+## Writing the tests
+
+### File organisation
+
+#### Example and template
+
+An example test and an empty template are available in **tests/e2e/cypress/cypress/integration/examples**.
+
 #### Custom commands
 
 In order to have re-usable code, some custom commands are listed here: **tests/e2e/cypress/cypress/support**. They are sorted by type:
 * circulation.js
+* collection.js
+* commands.js
 * navigation.js
 * record.js
 * user.js
@@ -80,6 +95,17 @@ In order to have re-usable code, some custom commands are listed here: **tests/e
 
 All these files must be declared in index.js to be able to use the commands in the project.
 For more informations, read the corresponding documentation [here](https://docs.cypress.io/api/cypress-api/custom-commands.html#Syntax).
+
+#### Fixtures
+
+Some fixtures are stored in **tests/e2e/cypress/cypress/fixtures** in order to have re-usable data for the tests. Existing fixtures are:
+* collections.json
+* common.json
+* documents.json
+* items.json
+* users.json
+
+See the corresponding documentation [here](https://docs.cypress.io/api/commands/fixture.html#Syntax).
 
 ### Selecting DOM elements
 
@@ -97,11 +123,20 @@ In countrary to what is said in [best practices](https://docs.cypress.io/guides/
 | Text  | `cy.contains('Submit').click()` | Depends on translations |
 | Specific attribute | `cy.get('[data-cy=submit]').click()` | To use only if there is no other way |
 
+### Preserving authentication information between tests
+
+In order to preserve authentication information between the tests, use the login command in the `before` part of the test and use the following instruction in the beforeEach part (see `example-test-request.spec.js`):
+
+```
+  beforeEach('Action to perform before each test', function() {
+    // Preserve authentication information between the tests
+    Cypress.Cookies.preserveOnce('session');
+  });
+```
+
 ### Assertions
 
 A list of assertions is available [here](https://docs.cypress.io/guides/references/assertions.html#BDD-Assertions).
-
-## Tip & Tricks
 
 ### Testing an asynchronous app
 
@@ -126,11 +161,3 @@ cy.deleteRecordFromDetailView();
 ```
 
 The documentation describing the network requests and corresponding subjects can be found [here](https://docs.cypress.io/guides/guides/network-requests.html)
-
-### Change BaseURL without editing `cypress.json`
-
-Use environment variable when you launch Cypress:
-
-```bash
-CYPRESS_BASE_URL=https://localhost:26375 cypress run
-```
