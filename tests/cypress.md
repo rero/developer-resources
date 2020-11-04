@@ -6,9 +6,10 @@ This tool is integrated to RERO-ILS and the following documentation explains how
 
 ## Prerequisites
 
+* optionally: `poetry run folding -c path/to/rero/ng-core -u path/to/rero/rero-ils-ui` (see [UI integration](../rero-instances/rero-ils-ui/ui-integration.md) for more information)
 * `poetry run bootstrap`
 * `poetry run setup`
-* `FLASK_DEBUG=False poetry run server`
+* `FLASK_DEBUG=False poetry run server -n`
 
 Local server (localhost:5000) must be running and the database must contain data, as Cypress will use them to run the tests.
 Note that setting `FLASK_DEBUG` to false means that the server should be restarted to take changes into account.
@@ -65,7 +66,7 @@ The configuration of cypress is set in cypress.json file. The current settings a
 * The response timeout (for API url)
 * The height and width of viewport (preview of the test)
 
-#### Change BaseURL without editing `cypress.json`
+### Change BaseURL without editing `cypress.json`
 
 Overriding options:
 
@@ -85,6 +86,7 @@ An example test and an empty template are available in **tests/e2e/cypress/cypre
 #### Custom commands
 
 In order to have re-usable code, some custom commands are listed here: **tests/e2e/cypress/cypress/support**. They are sorted by type:
+* api.js
 * circulation.js
 * collection.js
 * commands.js
@@ -95,6 +97,13 @@ In order to have re-usable code, some custom commands are listed here: **tests/e
 
 All these files must be declared in index.js to be able to use the commands in the project.
 For more informations, read the corresponding documentation [here](https://docs.cypress.io/api/cypress-api/custom-commands.html#Syntax).
+
+#### API requests
+**api.js** is used to declare API requests in order to perform actions that shouldn't be part of the UI testing (create a document and and item to test circulation actions, and then delete them, for example).
+This file contains custom commands to:
+* create an item
+* create a document
+* delete a resource
 
 #### Fixtures
 
@@ -132,6 +141,49 @@ In order to preserve authentication information between the tests, use the login
     // Preserve authentication information between the tests
     Cypress.Cookies.preserveOnce('session');
   });
+```
+
+### Aliases
+
+Cypress allows to store values as aliases. This can be used in different ways:
+* To store a value from the response of a request:
+```
+cy.request({
+    method: 'POST',
+    url: '/api/items/',
+    followRedirect: false,
+    body: {
+      ...
+      }
+    }
+  })
+  .its('body').then((body) => {
+    cy.wrap(body.id).as('getItemPid'); // Stores the item pid as an alias
+  })
+  ```
+* To store a route:
+```
+cy.route('/api/permissions/documents/*').as('getDocumentPermissions'); // Stores the route
+```
+* To store a selected DOM element:
+```
+cy.get(#account-menu).as('accountMenu');
+```
+
+Those aliases can be retrieved later, or even from a command into a test file:
+```
+cy.get('@getItemPid');
+cy.wait('@getDocumentPermissions'); // This particular case is developed below
+cy.get('@accountMenu');
+```
+
+They can also be stored in a local variable:
+```
+let documentPid;
+cy.get('@getDocumentPid').then((pid) => {
+    // Store document pid to re-use it later (an alias is deleted in the 'after' part of the test)
+    documentPid = pid;
+});
 ```
 
 ### Assertions

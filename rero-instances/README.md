@@ -8,7 +8,7 @@
 - [`poetry`](poetry.md)
 - [`docker`](docker.md)
 - [Development environment](rero-ils/dev_installation.md)
-- [Useful commands](rero-instances/useful-commands.md)
+- [Useful commands](useful-commands.md)
 - [`russian_dolls`][1]: to install `ng-core` in `rero-ils-ui` and `rero-ils-ui`
   in `rero-ils`.
 
