@@ -3,17 +3,31 @@
 This is mainly in the context of RERO ILS.
 
 1. Make sure all the needed PR are merged. Use the [RERO ILS PR project][1] and
-   check with the dev team.
+   check with the dev team. If possible, check the relevant milestone.
+1. Make sure the Cypress tests have succeeded.
+1. Make sure the `dev` branches of the different projects have been carefully tested
+   **with the [translations][3]**.
 1. Check with the maintainers if the right version of `ng-core`
    (@sebastiendeleze) and `rero-ils-ui` (@jma) are published.
-1. Follow [the workflow][2]: checks the translations, update the version
-   numbers, the changelog, release notes, commit the changes, tag the commit,
-   publish the release.
+1. Follow [the workflow][2]:
+    1. Checks the [translations][3].
+    1. Update the version numbers.
+    1. The `CHANGES.md`.
+    1. The `RELEASE-NOTES.rst`.
+    1. Commit the changes.
+    1. Tag the commit.
+    1. Push on the upstream `master` branch.
+    1. Publish the release (edit the tag).
 
 After the release:
 
 1. Ask a dev to update dependencies in each projects.
 1. Ask a dev, in RERO and in UCLouvain to update the migration scripts.
+1. Ask @rerowep, @BadrAly or @jma to deploy the published release on
+   [ils.test.rero.ch][4].
 
 
 [1]: https://github.com/orgs/rero/projects/5
+[2]: release-publication.md
+[3]: ../translations/translations-workflow.md
+[4]: https://ils.test.rero.ch
