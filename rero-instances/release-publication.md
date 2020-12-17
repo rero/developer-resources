@@ -2,28 +2,29 @@
 
 ## RERO ILS
 
-1. In another PR/commit, verify that there's no more strings to be extracted,
-   and that the available weblate translations have been integrated. See the
-   [weblate workflow][2]. Make sure this PR or commit is integrated to the
-   `dev` branch before integrating the release commit (below).
+1. In the `translations` branch, verify that there's no more strings to be
+   extracted, and that the available [weblate][3] translations have been
+   integrated. See the [weblate workflow][2]. Make sure this PR or commit is
+   integrated to the `dev` branch before integrating the release commit
+   (below).
 1. Make sure your local repository is up to date with remote (`git fetch`).
-1. Update, if necessary, `rero_ils/bundles.py` with the `rero-ils-ui` used
-   version.
+1. Update `scripts/bootstrap` with the `rero-ils-ui` used version.
 1. Update `rero_ils/version.py`.
 1. Update `pyproject.yml`.
-1. Update the `CHANGES.rst` file (check 
-   [how to generate it][1]. To do this, you need to be
-   sure that no PR will be added to the `dev` branch.
-1. Update the `RELEASE-NOTES.rst`:
-    - Write a release notes (summary of the commits) in a MD file. Read the
-      RERO ILS and the RERO ILS UI commits since the last existing tag.
-    - Convert the Markdown in ReStructuredText with `pandoc`:
-  `pandoc -t rst --reference-links -o <destination>.rst <your-file>.md`.
-    - Copy the content of the `.rst` file as a new section in the
-  `RELEASE-NOTES.rst`.
+1. Update the `CHANGES.md` file (check 
+   [how to generate it][1]. To do this, you need to be sure that no PR will be
+   added to the `dev` branch.
+1. Update the `RELEASE-NOTES.rst` :
+    - Write a release notes (summary of the commits) in a MD file (or directly
+      in ReStructuredText if you can). Read the `rero/rero-ils`,
+      `rero/rero-ils-ui` and `rero/ng-core` (at least what is relevant for ILS)
+      commits since the last existing tag.
+    - Convert the Markdown in ReStructuredText with `pandoc`: `pandoc -t rst
+      --reference-links -o <destination>.rst <your-file>.md`.
+    - Copy the content of the `.rst` file as a new section at the top of the
+      `RELEASE-NOTES.rst`.
     - Of course, do not add to the `git` history your working files.
-1. Once everything is ready, propose a PR, make sure the release note is
-   specifically reviewed.
+1. Once everything is ready, propose a PR.
 1. When this PR is merge into `dev`, update your local `dev` branch, verify
    carefully that the commits, commit hashes are the same.
 1. Checkout to your local `master` branch, make sure it's up to date with the
@@ -37,10 +38,12 @@
    with the following content, adapted to your situation: "Find the
    comprehensive release note on the RELEASE-NOTES.rst file:
    https://github.com/rero/rero-ils/blob/master/RELEASE-NOTES.rst#v0XX" and
-   publish it as release.
+   publish it as release. You also need to give a title to the release, until
+   now we've just entitled the release with the version number.
 
 [1]: /documentation/generate-changelog.md
 [2]: /translations/translations-workflow.md
+[3]: https://hosted.weblate.org/projects/rero_plus/
 
 ## RERO ILS UI
 
