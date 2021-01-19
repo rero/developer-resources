@@ -123,6 +123,10 @@ The same logic would apply to the `description` if any where there.
 
 ## Enum
 
+- **for values**, apply the following rules to ease the translation work:
+  - use URIs if available
+  - avoid colons `:`
+  - use prefixes from 8-10 values (to judge according to each use case)
 - **form options**:
     - use the `value`/`label` method **only** if the codes need to be
       translated.
