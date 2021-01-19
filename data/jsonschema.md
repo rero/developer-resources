@@ -123,9 +123,14 @@ The same logic would apply to the `description` if any where there.
 
 ## Enum
 
-- **form options**:
-    - use the `value`/`label` method **only** if the codes need to be
+- **For values**, apply the following rules to ease the translation work:
+  - Use URIs if available.
+  - Avoid colons `:`.
+  - Use prefixes if more than 8-10 values (to judge according to each use
+    case).
+- **Form options**:
+    - Use the `value`/`label` method **only** if the codes need to be
       translated.
-    - in the `label` value, use the same value as the one of the `value` key.
+    - In the `label` value, use the same value as the one of the `value` key.
       This is to avoid translating the label and the value, as it is sometimes
       needed.
