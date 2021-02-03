@@ -195,11 +195,8 @@ A list of assertions is available [here](https://docs.cypress.io/guides/referenc
 In order to allow enough time to display the elements of the views, the default command timeout was set to 2 minutes.
 In some cases, a better solutions is needed: wait on an request and on its response. Here is a basic example:
 ```
-// Start a server
-cy.server();
-
-// Provide a route with an alias (this needs to be done early enough to start to listen to the route before using it)
-cy.route({method: 'DELETE', url: '/api/items/*'}).as('deleteItem');
+// Spy a route using an alias (this needs to be done early enough to start to listen to the route before using it)
+cy.intercept({'DELETE','/api/items/*'}).as('deleteItem');
 
 // Do something that matches the route defined above
 cy.get('#item-' + this.itemBarcode + ' [name=buttons] > [name=delete]').click();
@@ -212,4 +209,5 @@ cy.wait('@deleteItem');
 cy.deleteRecordFromDetailView();
 ```
 
-The documentation describing the network requests and corresponding subjects can be found [here](https://docs.cypress.io/guides/guides/network-requests.html)
+The documentation describing the network requests and corresponding subjects can be found [here](https://docs.cypress.io/guides/guides/network-requests.html).
+See also [this page](https://docs.cypress.io/api/commands/intercept.html#Comparison-to-cy-route) to learn more about `cy.intercept()`.
