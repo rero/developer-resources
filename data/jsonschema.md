@@ -136,4 +136,4 @@ The same logic would apply to the `description` if any where there.
     - In the `label` value, use the same value as the one of the `value` key.
       This is to avoid translating the label and the value, as it is sometimes
       needed.
-    - In case of a `oneOf` (ex: main type/subtype), use the same text for `title` of the 1st-level element, as for `value` and `label`. This will ease the translations.
+    - In case of a list and sublist with `oneOf` (ex: main type/subtype), use the same text for `title` of the 1st-level element, as for `value` and `label`. This will ease the translations.
