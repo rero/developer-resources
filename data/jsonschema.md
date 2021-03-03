@@ -124,12 +124,15 @@ The same logic would apply to the `description` if any where there.
 ## Enum
 
 - **For values**, apply the following rules to ease the translation work:
-  - Use controlled vocabulary if possible. Example: [RDA values](http://www.rdaregistry.info/termList/)
-    - Use a prefix to identify the vocabulary, and separate it from the value with underscore `_`
-    - Example for RDA mode of issuance: `rdami_1001`
-  - If no controlled vocabulary exists, use prefixes in case of more than 8-10 values (to judge according to each use
-    case).
-  - In general, don't use URIs or values with colons `:`
+  - Use a standard controlled vocabulary if possible. Example: [RDA values](http://www.rdaregistry.info/termList/)
+    - Use a prefix to identify the vocabulary, and separate it from the value with colon `:`
+    - Example for RDA mode of issuance: `rdami:1001`. "rdami" refers to a URI.
+  - If no standard controlled vocabulary exists
+    - use natural language, or
+    - create *home made* codes, if the values need specific translations that should not be confused with others.
+      - add a *home made* prefix spearated by underscore `_` in the case of a list bigger than 8-10 values or if the code is too short (like sz for Switzerland).
+      - Example of a home made code with prefix for Switzerland: `country_sz`.
+      - Example of a home made code without prefix: `received_and_complete_or_ceased`
 - **Form options**:
     - Use the `value`/`label` method **only** if the codes need to be
       translated.
