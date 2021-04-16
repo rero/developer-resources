@@ -130,6 +130,7 @@ All database stuffs.
 - [pytest](tests/pytest.md)
 - [cypress](tests/cypress.md)
 - RERO ILS [data for tests](tests/data-for-tests.md)
+- [Load testing](tests/load-testing/load-testing.md)
 
 ### [Translation](translation/README.md)
 
