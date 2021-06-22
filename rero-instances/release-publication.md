@@ -58,7 +58,7 @@
 1. If a pull request is created and validated, merge it into `dev`.
 1. Checkout to your local `dev` branch, make sure it's up to date with the
    remote `dev`.
-1. Build library with the command `ng run pack`.
+1. Build library with the command `npm run pack`.
 1. Execute `npm publish` to publish library in npm registry. You must be logged 
    in npm and the user has to belong to `rero` organisation (Check with IT to get access).
 1. Checkout to your local `master` branch, make sure it's up to date with the
