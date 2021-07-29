@@ -15,10 +15,10 @@
    [how to generate it][1]. To do this, you need to be sure that no PR will be
    added to the `dev` branch.
 1. Update the `RELEASE-NOTES.rst` :
-    - Write a release notes (summary of the commits) in a MD file (or directly
-      in ReStructuredText if you can). Read the `rero/rero-ils`,
-      `rero/rero-ils-ui` and `rero/ng-core` (at least what is relevant for ILS)
-      commits since the last existing tag.
+    - Write a release notes (summary of the main features and main fixes
+      issues) in a MD file (or directly in ReStructuredText if you can). Read
+      the `rero/rero-ils`, `rero/rero-ils-ui` and `rero/ng-core` (at least what
+      is relevant for ILS) commits since the last existing tag.
     - Convert the Markdown in ReStructuredText with `pandoc`: `pandoc -t rst
       --reference-links -o <destination>.rst <your-file>.md`.
     - Copy the content of the `.rst` file as a new section at the top of the

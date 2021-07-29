@@ -24,13 +24,15 @@ Of course, to update:
 
 ## Usage
 
-This is how [@iGormilhit](https://github.com/iGormilhit) is using it, it could
+This is how [@iGormilhit][im] is using it, it could
 certainly be improved or automated.
+
+[im]: https://github.com/iGormilhit
 
 ### GitHub's API Token
 
 You need to generate a *personal access token* to avoid the API's limit. You
-can do that on https://github.com/settings/tokens.
+can do that on <https://github.com/settings/tokens>.
 
 You also need the correct permissions on the repository for which you want to
 read the events through the API.
@@ -41,7 +43,11 @@ read the events through the API.
 You may need to convert it to another format, such as reStructuredText.
 
 ```bash
-github_changelog_generator --user rero --project rero-ils -t <token> --release-branch dev --future-release v0.11.0 -o CHANGELOG.md
+github_changelog_generator --user rero --project rero-ils -t <token> \
+ --exclude-labels stale \
+ --release-branch dev \
+ --future-release v0.11.0 \
+ -o CHANGELOG.md
 ```
 
 This will generate the `CHANGELOG.md` file for the first time (`-o
@@ -49,13 +55,18 @@ CHANGELOG.md`), for the `rero/rero-ils` project, using the user `rero`, but
 with your own token. It tracks the events that happened on the `dev` branch,
 specifies the name of the next release (otherwise last changes, after the last
 tag, would be in an "unrealesed" section). Finally, it specifies the output
-file.
+file. The `--exclude-labels stale` excludes PRs and issues labeled as `stale`
+from the generated changelog.
 
 But if you just want to add a section with the future new release, you could do
 as follows:
 
 ```bash
-github_changelog_generator --user rero --project rero-ils -t <token> --release-branch dev --future-release v0.11.0 -b CHANGELOG.md -o CHANGELOG.md
+github_changelog_generator --user rero --project rero-ils -t <token> \
+ --exclude-labels stale \
+ --release-branch dev \
+ --future-release v0.11.0 \
+ -b CHANGELOG.md -o CHANGELOG.md \
 ```
 
 This command adds the `-b` parameter which specifies the already existing file
@@ -65,7 +76,12 @@ However, I do prefer to get only the changes since the last release, in an
 empty file, like this:
 
 ```bash
-github_changelog_generator --user rero --project rero-ils -t <token> --release-branch dev --future-release v0.11.0 --since-tag v0.10.1 -o CHANGELOG.md
+github_changelog_generator --user rero --project rero-ils -t <token> \
+ --exclude-labels stale \
+ --release-branch dev \
+ --future-release v0.11.0 \
+ --since-tag v0.10.1 \
+ -o CHANGELOG.md
 ```
 
 ### License and format conversion
@@ -83,4 +99,3 @@ documentation](https://pandoc.org/installing.html)
 To convert a Markdown file into reStructuredText:
 
     pandoc -t rst -o <output.rst> <input.md>
-
