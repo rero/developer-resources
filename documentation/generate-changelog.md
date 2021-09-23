@@ -24,8 +24,8 @@ Of course, to update:
 
 ## Usage
 
-This is how [@iGormilhit][im] is using it, it could
-certainly be improved or automated.
+This is how [@iGormilhit][im] is using it, it could certainly be improved or
+automated.
 
 [im]: https://github.com/iGormilhit
 
@@ -44,7 +44,7 @@ You may need to convert it to another format, such as reStructuredText.
 
 ```bash
 github_changelog_generator --user rero --project rero-ils -t <token> \
- --exclude-labels stale \
+ --exclude-tags stale \
  --release-branch dev \
  --future-release v0.11.0 \
  -o CHANGELOG.md
