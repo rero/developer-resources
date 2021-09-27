@@ -82,3 +82,7 @@ merging:
 You may need to resolve conflicts.
 
 [1]: https://cli.github.com/
+[demo]: https://ils.test.rero.ch
+[dev]: https://ilsdev.test.rero.ch
+[test]: https://bib.test.rero.ch
+[prod]: https://bib.rero.ch
