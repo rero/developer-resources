@@ -45,7 +45,7 @@ You may need to convert it to another format, such as reStructuredText.
 ```bash
 github_changelog_generator --user rero --project rero-ils -t <token> \
  --exclude-tags stale \
- --release-branch dev \
+ --release-branch staging \
  --future-release v0.11.0 \
  -o CHANGELOG.md
 ```
@@ -64,7 +64,7 @@ as follows:
 ```bash
 github_changelog_generator --user rero --project rero-ils -t <token> \
  --exclude-labels stale \
- --release-branch dev \
+ --release-branch staging \
  --future-release v0.11.0 \
  -b CHANGELOG.md -o CHANGELOG.md \
 ```
@@ -78,7 +78,7 @@ empty file, like this:
 ```bash
 github_changelog_generator --user rero --project rero-ils -t <token> \
  --exclude-labels stale \
- --release-branch dev \
+ --release-branch staging \
  --future-release v0.11.0 \
  --since-tag v0.10.1 \
  -o CHANGELOG.md
