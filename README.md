@@ -132,7 +132,8 @@ All database stuffs.
 - RERO ILS [data for tests](tests/data-for-tests.md)
 - [Load testing](tests/load-testing/load-testing.md)
 
-### [Translation](translation/README.md)
+### [Translation](translations)
 
 - [babel](translations/babel.md)
-- [how to add a new language](translation/add-language.md)
+- [how to add a new language](translations/add-language.md)
+- [Translations Workflow](translations/translations-workflow.md)
