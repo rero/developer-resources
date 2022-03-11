@@ -11,6 +11,6 @@ Even if `babel` provide command line interface it is usually easy to use: `setup
 - **extract update languge files to translate**: `setup.py update_catalog`
 - **make translation available for the system**: `setup.py compile_catalog`
 
-## Transifex
+## Weblate
 
-[Transifex](https://www.transifex.com) is a centralize plateform for translations. An RERO [project](https://www.transifex.com/rero) exists.
+[Weblate](https://hosted.weblate.org) is a centralized plateform for translations. A RERO [project](https://hosted.weblate.org/projects/rero_plus/) exists (see [translation workflow](translations-workflow.md)).

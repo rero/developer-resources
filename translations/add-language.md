@@ -1,6 +1,6 @@
 # How to add a new language
 
-:warning: This should be updated!
+:warning: This guide is not valid anymore. It should be updated!
 
 This guide is tested for RERO-ILS v0.5.2
 

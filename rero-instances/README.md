@@ -12,7 +12,7 @@
 - [`russian_dolls`][1]: to install `ng-core` in `rero-ils-ui` and `rero-ils-ui`
   in `rero-ils`.
 
-[1]: https://github.com/rero/rero-ils/blob/dev/scripts/russian_dolls
+[1]: https://github.com/rero/rero-ils/blob/staging/scripts/russian_dolls
 
 ## ng-core
 

@@ -15,7 +15,7 @@
 We're using weblate as a web service to help the translation process, through
 the hosted service of weblate: <https://hosted.weblate.org/projects/rero_plus>
 
-For our needs, on weblate, we have one project (named RERO+, with `rero_plus`
+For our needs, on Weblate, we have one project (named RERO+, with `rero_plus`
 as slug), with several *components*:
 
 - `ng-core`.
@@ -29,9 +29,7 @@ as slug), with several *components*:
 
 ### From a developer point of view
 
-With this workflow, when developing, there's nothing to do related to the
-translations, except to add to the source code what's needed to the script to
-extract the strings to be translated, or, when necessary, to add string in the
+With this workflow, developers only need to add translation markers in the source code's translatable strings, or, when necessary, add string in the
 *manual translation* file.
 
 Testing the extraction to check the code is a good idea, though. But no files
@@ -44,8 +42,8 @@ should be modified in the translation folders and subfolders (ie
 conflicts.**
 
 The starting situation is just after a release: the GitHub `translations` branch
-is on the same commit than the [weblate]][12] `translations` branch. Also, the
-GitHub `translations` branch is on the same commit than the GitHub `dev`
+is on the same commit than the [Weblate][12] `translations` branch. Also, the
+GitHub `translations` branch is on the same commit than the GitHub `staging`
 branch.
 
 1. Some changes are done on the `dev` branch.

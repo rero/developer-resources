@@ -1,6 +1,6 @@
 # State chart
 
-:warning: See https://github.com/rero/rero-ils/blob/dev/doc/circulation/README.md
+:warning: See https://github.com/rero/rero-ils/blob/staging/doc/circulation/README.md
 
 The circulation module follows 2 state charts: Item state chart and Loan state
 chart. See below.
