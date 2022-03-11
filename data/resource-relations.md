@@ -2,7 +2,7 @@
 
 :warning: See [`reroils_resources.svg`][1]
 
-[1]: https://github.com/rero/rero-ils/blob/dev/doc/reroils_resources.svg
+[1]: https://github.com/rero/rero-ils/blob/staging/doc/reroils_resources.svg
 
 ## Libraries
 
