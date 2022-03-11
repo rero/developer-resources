@@ -87,10 +87,6 @@ All database stuffs.
 * [invenio](invenio/invenio.md)
 * [workshop1 (2016/12/21)](invenio/workshop1.md)
 
-### Lexicon
-
-* [Lexicon](lexicon/lexicon.md)
-
 ### Permissions
 
 * [invenio-user-management](permissions/invenio-user.md)
