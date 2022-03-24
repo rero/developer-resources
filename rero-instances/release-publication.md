@@ -1,97 +1,81 @@
 # How to publish a new release?
 
-## RERO ILS
+This page describes the process that we use to publish a new release of the RERO+ projects.
 
-1. In the `translations` branch, verify that there's no more strings to be
-   extracted, and that the available [weblate][3] translations have been
-   integrated. See the [weblate workflow][2]. Make sure this PR or commit is
-   integrated to the `staging` branch before integrating the release commit
-   (below).
-1. Make sure your local repository is up to date with remote (`git fetch`).
-1. Update `scripts/bootstrap` with the `rero-ils-ui` used version.
-1. Update `rero_ils/version.py`.
-1. Update `pyproject.yml`.
-1. Update the `CHANGES.md` file (check [how to generate it][1]. To do this, you
-   need to be sure that no PR will be added to the `staging` branch.
-1. Update the `RELEASE-NOTES.rst` :
-    - Write a release notes (summary of the main features and main fixes
-      issues) in a MD file (or directly in ReStructuredText if you can). Read
-      the `rero/rero-ils`, `rero/rero-ils-ui` and `rero/ng-core` (at least what
-      is relevant for ILS) commits since the last existing tag.
-    - Convert the Markdown in ReStructuredText with `pandoc`: `pandoc -t rst
-      --reference-links -o output.rst source.md`.
-    - Copy the content of the `.rst` file as a new section at the top of the
-      `RELEASE-NOTES.rst`.
-    - Of course, do not add to the `git` history your working files.
-1. Once everything is ready, propose a PR.
-1. When this PR is merge into `staging`, update your local `staging` branch, verify
-   carefully that the commits, commit hashes are the same.
-1. Checkout to your local `master` branch, make sure it's up to date with the
-   remote `master`.
-1. Merge your local `staging` branch into your local
-   `master`: `git merge --ff-only dev`.
-1. Tag the last commit: `git tag -s -m "v0.X.X" v0.X.X`. (`-s` is to sign the
-   tag with your GPG key, it's optional).
-1. Push the local `master` branch to remote, with the tag:
-   `git push --tags [rero-remote-repository-name] master`.
-1. On github, edit the corresponding tag (that means publishing a new release)
-   with the following content, adapted to your situation: "Find the
-   comprehensive release note on the RELEASE-NOTES.rst file:
-   <https://github.com/rero/rero-ils/blob/master/RELEASE-NOTES.rst#v0XX"> and
-   publish it as release. You also need to give a title to the release, until
-   now we've just entitled the release with the version number.
+## RERO ILS/SONAR
 
-[1]: /documentation/generate-changelog.md
-[2]: /translations/translations-workflow.md
+1. **Release the other projects:**
+   1. If needed, publish a release for [ng-core](#ng-core) and [rero-ils-ui OR sonar-ui](#rero-ils-uisonar-ui)
+2. **Prepare a release-candidate:**
+   1. Decide what you want to integrate into the new release and merge everything into a branch to be used as a release-candidate (usually `staging`).
+   2. Deploy the state of this branch to `test` or `dev` servers for internal testing.
+3. **Translate the release:**
+   1. Extract the new translations to [Weblate][3] and give the conrtributors some time to translate the new strings; then, integrate the translation commit. [See detailed translation workflow][2].
+4. **Prepare a release commit:**
+   1. Make sure your local repository is up to date with remote (`git fetch -p --all`).
+   2. Update `scripts/bootstrap` with the `rero-ils-ui` OR `sonar-ui` used version.
+   3. Update `rero_ils/version.py` OR `sonar/version.py`.
+   4. Update `pyproject.yml`.
+   5. Update the `CHANGELOG.md` file [as described here][1].
+   6. Commit with message `release: v1.X.X`
+   7. Open a Pull Request for the release on the Github repository.
+5. **Publish to `master`:**
+   1. When the release PR is merged into `staging`, update your local `staging` branch, verify carefully that the commits, commit hashes are the same.
+   2. Checkout to your local `master` branch, make sure it's up to date with the remote `master`.
+   3. Merge your local `staging` branch into your local `master`: `git merge --ff-only staging`. Check that your `staging` and `master` are up to date with `upstream/staging`.
+   4. Tag the last commit: `git tag -m "v1.X.X" v1.X.X`.
+   5. Push the local `master` branch to remote, with the tag: `git push --tags [rero-remote-repository-name] master`.
+   6. On Github, edit the corresponding tag (that means publishing a new release) with title `v1.X.X`. Copy paste the corresponding changelog from `CHANGELOG.md` to the description.
+
+[1]: ../documentation/generate-changelog.md
+[2]: ../translations/translations-workflow.md
 [3]: https://hosted.weblate.org/projects/rero_plus/
 
-## RERO ILS UI
+## RERO ILS UI/SONAR UI
 
-1. Check that:
-   - the dev branch contains all PRs and branch planned for the release
-   - the traductions are up to date
-   - the `ng-core` version is the latest (on the `ng-core` project).
-1. Update the `version` property in `package.json` file.
-1. Run the command `npm i` to update `package-lock.json` file.
-1. Update the changelog (check [how to generate it][1]).
-1. Commit the changes on dev or on a specific branch with the following commit
-   message: `release: vx.x.x`.
-1. If a pull request is created and validated, merge it into `staging`.
-1. Checkout to your local `staging` branch, make sure it's up to date with the
+1. **Translate the release:**
+   1. Usually at the same time than the translation for the backend project.
+   2. Extract the new translations to [Weblate][3] and give the conrtributors some time to translate the new strings; then, integrate the translation commit. [See detailed translation workflow][2].
+2. **Prepare a release commit:**
+   1. Check that:
+      - the dev branch contains all PRs and branch planned for the release
+      - the translations are up to date
+      - the `ng-core` version is the latest (if needed, publish a new version of [ng-core](#ng-core)).
+   2. Update the `version` property in `package.json` file.
+   3. Run the command `npm i` to update `package-lock.json` file.
+   4. Update the `CHANGELOG.md` file [as described here][1].
+   5. Commit with message `release: v1.X.X`
+   6. Open a Pull Request for the release on the Github repository.
+3. **Publish NPM package (usually done by a developer)**
+   1. Checkout to your local `staging` branch, make sure it's up to date with the
    remote `staging`.
-1. Build library with the command `npm run pack` (from the project's root).
-1. Navigate to the `/build` directory and execute `npm publish` to publish
-   library in npm registry. You must be logged in npm and the user has to
-   belong to `rero` organisation (Check with IT to get access).
-1. Checkout to your local `master` branch, make sure it's up to date with the
-   remote `master`.
-1. Merge the `staging` branch into master: `git merge --ff-only dev`.
-1. Tag the last commit: `git tag -s -m "v0.X.X" v0.X.X`. (`-s` is to sign the
-   tag with your GPG key, it's optional).
-1. Push the local `master` branch to remote, with the tag:
-   `git push --tags [rero-remote-repository-name] master`.
+   1. Build library with the command `npm run pack` (from the project's root).
+   1. Navigate to the `/build` directory and execute `npm publish` to publish library in npm registry. You must be logged in npm and the user has to belong to `rero` organisation (Check with IT to get access).
+4. **Publish to `master`:**
+   1. Checkout to your local `master` branch, make sure it's up to date with the remote `master`.
+   2. Merge the `staging` branch into master: `git merge --ff-only dev`.
+   3. Tag the last commit: `git tag -m "v1.X.X" v1.X.X`
+   4. Push the local `master` branch to remote, with the tag: `git push --tags [rero-remote-repository-name] master`.
+   5. On Github, edit the corresponding tag (that means publishing a new release) with title `v1.X.X`. Copy paste the corresponding changelog from `CHANGELOG.md` to the description.
 
 ## NG-CORE
 
-1. Update the `version` property in `package.json` file.
-1. Update the `version` property in `projects/rero/ng-core/package.json` file.
-1. Run the command `npm i` to update `package-lock.json` file.
-1. Commit the changes on dev or on a specific branch and specify changes in
-   commit message.
-1. If a pull request is created and validated, merge it into `staging`.
-1. Checkout to your local `staging` branch, make sure it's up to date with the
-   remote `staging`.
-1. Build library with the command `ng build @rero/ng-core`.
-1. Go to generated library with command `cd dist/rero/ng-core`.
-1. Check version is correct in `package.json` in the current folder.
-1. Execute `npm publish` to publish library in npm registry. You must be logged
-   in npm and the user has to belong to `rero` organisation (Check with IT to
-   get access).
-1. Go back to root folder.
-1. Checkout to your local `master` branch, make sure it's up to date with the
-   remote `master`.
-1. Merge the `staging` branch into master: `git merge --ff-only dev`.
-1. Tag the last commit: `git tag -s -m "v0.X.X" v0.X.X`. (`-s` is to sign the
-   tag with your GPG key, it's optional).
-1. Push the local `master` branch to remote, with the tag:
-   `git push --tags [rero-remote-repository-name] master`.
+1. **Prepare a release commit:**
+   1. Update the `version` property in `package.json` file.
+   2. Update the `version` property in `projects/rero/ng-core/package.json` file.
+   3. Run the command `npm i` to update `package-lock.json` file.
+   4. Commit the changes to `staging` or on a specific branch and specify changes in commit message.
+   5. Push or PR the release commit to `upstream/staging`.
+2. **Publish NPM package (usually done by a developer)**
+   1. Checkout to your local `staging` branch, make sure it's up to date with the remote `staging`.
+   2. Build library with the command `ng build @rero/ng-core`.
+   3. Go to generated library with command `cd dist/rero/ng-core`.
+   4. Check version is correct in `package.json` in the current folder.
+   5. Execute `npm publish` to publish library in npm registry. You must be logged in npm and the user has to belong to `rero` organisation (Check with IT to get access).
+3. **Publish release to `master`**
+   1. Go back to root folder.
+   2. Checkout to your local `master` branch, make sure it's up to date with the remote `master`.
+   3. Merge the `staging` branch into master: `git merge --ff-only dev`.
+   4. Tag the last commit: `git tag -m "v0.X.X" v0.X.X`.
+   5. Push the local `master` branch to remote, with the tag: `git push --tags [rero-remote-repository-name] master`.
+   6. On Github, edit the corresponding tag (that means publishing a new release) with title `v1.X.X`. Copy paste the corresponding changelog from `CHANGELOG.md` to the description.
