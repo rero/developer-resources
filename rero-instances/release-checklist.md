@@ -2,15 +2,15 @@
 
 This is mainly in the context of RERO ILS.
 
-1. Make sure all the needed PR are merged. Use the [RERO ILS PR project][1] and
+1. Make sure all the needed PRs are merged. Use the [RERO ILS PR project][1] and
    check with the dev team. If possible, check the relevant milestone.
-1. Make sure the Cypress tests have succeeded.
-1. Make sure the `dev` branches of the different projects have been carefully tested
+1. Make sure the Github Actions tests were successful
+1. Make sure the `staging` branches of the different projects have been carefully tested
    **with the [translations][3]**.
 1. Check with the maintainers if the right version of `ng-core`
-   (@sebastiendeleze) and `rero-ils-ui` (@jma) are published.
+   (@jma) and `rero-ils-ui` (@jma) are published.
 1. Follow [the workflow][2]:
-    1. Checks the [translations][3].
+    1. Check the [translations][3].
     1. Update the version numbers.
     1. The `CHANGES.md`.
     1. The `RELEASE-NOTES.rst`.
