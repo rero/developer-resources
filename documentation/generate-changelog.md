@@ -12,9 +12,11 @@ README][2] is very informative on the installation method and usage.**
 [1]: https://github.com/github-changelog-generator/github-changelog-generator
 [2]: https://github.com/github-changelog-generator/github-changelog-generator/blob/master/README.md
 
-## Installation
+## Install
 
-As it is a ruby software:
+Ruby >3.0.0 is required. Install it for your OS. For Linux, [rbenv](https://github.com/rbenv/rbenv) is a good way to choose the Ruby version.
+
+Install `github_changelog_generator`:
 
     gem install github_changelog_generator
 
@@ -23,11 +25,6 @@ Of course, to update:
     gem update github_changelog_generator
 
 ## Usage
-
-This is how [@iGormilhit][im] is using it, it could certainly be improved or
-automated.
-
-[im]: https://github.com/iGormilhit
 
 ### GitHub's API Token
 
@@ -39,63 +36,21 @@ read the events through the API.
 
 ### Generating the changelog
 
-**:warning: `github_changelog_generator` generate files in Markdown format**.
-You may need to convert it to another format, such as reStructuredText.
+All versioned projects should contain a param file `.github_changelog_generator`, which sets the parameters (repo, branch, file structure, tags to ignroe, etc.). You can adapt this file to your needs.
 
-```bash
-github_changelog_generator --user rero --project rero-ils -t <token> \
- --exclude-tags stale \
- --release-branch staging \
- --future-release v0.11.0 \
- -o CHANGELOG.md
-```
+To update the `CHANGELOG.md` file with a new release, use this command with the corresponding parameters:
 
-This will generate the `CHANGELOG.md` file for the first time (`-o
-CHANGELOG.md`), for the `rero/rero-ils` project, using the user `rero`, but
-with your own token. It tracks the events that happened on the `dev` branch,
-specifies the name of the next release (otherwise last changes, after the last
-tag, would be in an "unrealesed" section). Finally, it specifies the output
-file. The `--exclude-labels stale` excludes PRs and issues labeled as `stale`
-from the generated changelog.
+    github_changelog_generator --since-tag <latest published release> --future-release <new release> -t <github token>
 
-But if you just want to add a section with the future new release, you could do
-as follows:
+For example, the following command will look at all changes (issues and PRs) between the tag `v1.9.5` and the current state of your branch. It will name this section `v1.10.0`:
 
-```bash
-github_changelog_generator --user rero --project rero-ils -t <token> \
- --exclude-labels stale \
- --release-branch staging \
- --future-release v0.11.0 \
- -b CHANGELOG.md -o CHANGELOG.md \
-```
+    github_changelog_generator --since-tag v1.9.5 --future-release v.1.10.0 -t DgDmTBkmRQoZZCMj985ueFKbPkXeLbvRtCyTJZFi
 
-This command adds the `-b` parameter which specifies the already existing file
-that will be expanded.
+### Verification
 
-However, I do prefer to get only the changes since the last release, in an
-empty file, like this:
-
-```bash
-github_changelog_generator --user rero --project rero-ils -t <token> \
- --exclude-labels stale \
- --release-branch staging \
- --future-release v0.11.0 \
- --since-tag v0.10.1 \
- -o CHANGELOG.md
-```
-
-### License and format conversion
-
-Since in RERO projects we have a License header, for the moment I suggest to
-add it manually.
-
-As written above, in the python projects, such as `rero-ils` adding the license
-is not enough, the Markdown file have to be converted into reStructuredText.
-For this, `pandoc` is the Swiss knife to use.
-
-To install `pandoc`, see [the `pandoc`
-documentation](https://pandoc.org/installing.html)
-
-To convert a Markdown file into reStructuredText:
-
-    pandoc -t rst -o <output.rst> <input.md>
+1. After generating a changelog, check carefully that:
+   * Only the new release has been added to the `CHANGELOG.md` file
+   * Nothing else has been deleted from the file
+   * The listed issues and PRs correspond to the ones that have been closed/merged for this release (not more, not less!)
+1. Manually fix any blatantly unclear or non-pertinent info in the generated list. Sometimes issues are closed wihtout being fixed. If someone closed an issue and forogt to tag it as `stale`, `wontfix` or `duplicate`, the generator will add it to the changelog.
+1. Once everything looks fine, save the file and keep on with the release!

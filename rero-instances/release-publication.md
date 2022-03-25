@@ -27,10 +27,6 @@ This page describes the process that we use to publish a new release of the RERO
    5. Push the local `master` branch to remote, with the tag: `git push --tags [rero-remote-repository-name] master`.
    6. On Github, edit the corresponding tag (that means publishing a new release) with title `v1.X.X`. Copy paste the corresponding changelog from `CHANGELOG.md` to the description.
 
-[1]: ../documentation/generate-changelog.md
-[2]: ../translations/translations-workflow.md
-[3]: https://hosted.weblate.org/projects/rero_plus/
-
 ## RERO ILS UI/SONAR UI
 
 1. **Translate the release:**
@@ -79,3 +75,7 @@ This page describes the process that we use to publish a new release of the RERO
    4. Tag the last commit: `git tag -m "v0.X.X" v0.X.X`.
    5. Push the local `master` branch to remote, with the tag: `git push --tags [rero-remote-repository-name] master`.
    6. On Github, edit the corresponding tag (that means publishing a new release) with title `v1.X.X`. Copy paste the corresponding changelog from `CHANGELOG.md` to the description.
+
+[1]: ../documentation/generate-changelog.md
+[2]: ../translations/translations-workflow.md
+[3]: https://hosted.weblate.org/projects/rero_plus/
