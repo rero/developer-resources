@@ -1,30 +1,41 @@
 # Generating a changelog
 
-Use [github-changelog-generator][1].
+Use [PyChangelog][1].
 
-It's a ruby software that reads a github project event data through github's
+It's a Python tool that reads a github project event data through github's
 API and generate a changelog with sections about fixed bugs (issues with the
-bug tag), fixed issues, and merge PR.
+bug tag), fixed issues, and merged PRs.
 
-:warning: **The [project
-README][2] is very informative on the installation method and usage.**
-
-[1]: https://github.com/github-changelog-generator/github-changelog-generator
-[2]: https://github.com/github-changelog-generator/github-changelog-generator/blob/master/README.md
+[1]: https://github.com/rero/pychangelog
 
 ## Install
 
-Ruby >3.0.0 is required. Install it for your OS. For Linux, [rbenv](https://github.com/rbenv/rbenv) is a good way to choose the Ruby version.
-
-Install `github_changelog_generator`:
-
-    gem install github_changelog_generator
-
-Of course, to update:
-
-    gem update github_changelog_generator
+1. Clone the repo : `git clone https://github.com/rero/pychangelog.git`.
+2. Run `poetry install` to install dependencies.
 
 ## Usage
+
+1. Edit the following in `config.ini`:
+   1. `repo`: the name of the project (`rero-ils`, `rero-ils-ui`, `sonar`, ...)
+   2. `from_tag` and `to_tag`: Title of latest release (e.g. `v1.10.0`) and 
+   title of next release (e.g. `v1.11.0`).
+2. Run `poetry run ./changelog.py --token <your-github-token>`
+3. Check `PYCHANGELOG.md` for your changelog
+4. Copy the generated changelog from `PYCHANGELOG.md` to the top of your 
+project's `CHANGELOG.md`.
+
+### Verification
+
+1. After generating a changelog, check carefully that:
+   * Only the new release has been added to the `CHANGELOG.md` file
+   * The listed issues and PRs correspond to the ones that have been 
+   closed/merged for this release (not more, not less!)
+2. Manually fix any blatantly unclear or non-pertinent info in the generated 
+list. If necessary, edit the issue directly in Github and generate the 
+changelog again. Sometimes issues are closed wihtout being fixed. If someone 
+closed an issue and forogt to tag it as `stale`, `wontfix` or `duplicate`, the 
+generator will add it to the changelog.
+3. Once everything looks fine, save the file and keep on with the release!
 
 ### GitHub's API Token
 
@@ -33,24 +44,3 @@ can do that on <https://github.com/settings/tokens>.
 
 You also need the correct permissions on the repository for which you want to
 read the events through the API.
-
-### Generating the changelog
-
-All versioned projects should contain a param file `.github_changelog_generator`, which sets the parameters (repo, branch, file structure, tags to ignroe, etc.). You can adapt this file to your needs.
-
-To update the `CHANGELOG.md` file with a new release, use this command with the corresponding parameters:
-
-    github_changelog_generator --since-tag <latest published release> --future-release <new release> -t <github token>
-
-For example, the following command will look at all changes (issues and PRs) between the tag `v1.9.5` and the current state of your branch. It will name this section `v1.10.0`:
-
-    github_changelog_generator --since-tag v1.9.5 --future-release v.1.10.0 -t DgDmTBkmRQoZZCMj985ueFKbPkXeLbvRtCyTJZFi
-
-### Verification
-
-1. After generating a changelog, check carefully that:
-   * Only the new release has been added to the `CHANGELOG.md` file
-   * Nothing else has been deleted from the file
-   * The listed issues and PRs correspond to the ones that have been closed/merged for this release (not more, not less!)
-1. Manually fix any blatantly unclear or non-pertinent info in the generated list. Sometimes issues are closed wihtout being fixed. If someone closed an issue and forogt to tag it as `stale`, `wontfix` or `duplicate`, the generator will add it to the changelog.
-1. Once everything looks fine, save the file and keep on with the release!
