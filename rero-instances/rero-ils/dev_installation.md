@@ -7,11 +7,12 @@ First install these tools on your operating system:
   * pyenv
   * nvm
   * pip
+  * docker and docker-compose
 
-Then install `poetry` and Python:
+Then install `poetry` and Python >3.9:
 
 ```bash
-pyenv install 3.6.10
+pyenv install 3.9.7
 pip install --user poetry
 ```
 
@@ -29,7 +30,7 @@ rero
         └── invenio.cfg
 ```
 
-Let's starting:
+Let's start:
 
 ```bash
 # First directory creation
@@ -70,22 +71,22 @@ EOF
 ```bash
 # working directory is rero-ils project
 cd rero/ils
-# Use Python 3.6.10
-pyenv local 3.6.10
+# Use Python 3.9.7
+pyenv local 3.9.7
 # Prepare environment: python dependencies, python development tools, etc.
-poetry run bootstrap
+poetry run poe bootstrap
 # Launch Docker
 docker-compose up -d && ./docker/wait-for-services.sh
-# Setup our instance (-w to avoid python warnings, -P to add persons without using internet)
-poetry run setup -P
+# Setup our instance (-w to avoid python warnings, -C to add persons without using internet)
+poetry run poe setup -C
 ```
 
 ## Usage
 
-Just launch rero-ils server:
+Launch rero-ils server:
 
 ```bash
-poetry run server
+poetry run poe server
 ```
 
 # Reinstall development environment
@@ -110,20 +111,20 @@ poetry env remove $(poetry env list|cut -d " " -f 1)
 And bootstrap a new environment (~5 min):
 
 ```bash
-poetry run bootstrap
+poetry run poe bootstrap
 ```
 
 Setup it (~23 min with -d, ~13 min without):
 
 ```bash
-# -w reduces warnings, -P uses local persons and -d loads big data for deployment
-docker-compose up -d && ./docker/wait-for-services.sh && poetry run setup -P -d
+# -w reduces warnings, -C uses local persons and -d loads big data for deployment
+docker-compose up -d && ./docker/wait-for-services.sh && poetry run poe setup -C -d
 ```
 
 And finally launch server:
 
 ```bash
-poetry run server
+poetry run poe server
 ```
 
 https://localhost:5000 and https://localhost:5000/professional/ should be available.

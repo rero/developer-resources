@@ -1,0 +1,146 @@
+{
+  "/signin/": {
+    "target": "https://ilsdev.test.rero.ch",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/signin": "https://ilsdev.test.rero.ch/signin/"
+    }
+  },
+  "/signout/": {
+    "target": "https://ilsdev.test.rero.ch",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/signout": "https://ilsdev.test.rero.ch/signout/"
+    }
+  },
+  "/patrons/*": {
+    "target": "https://ilsdev.test.rero.ch",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/patrons": "https://ilsdev.test.rero.ch/patrons"
+    }
+  },
+  "/schemas": {
+    "target": "https://ilsdev.test.rero.ch",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/schemas": "https://ilsdev.test.rero.ch/schemas"
+    }
+  },
+  "/api/*": {
+    "target": "https://ilsdev.test.rero.ch",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/api": "https://ilsdev.test.rero.ch/api"
+    }
+  },
+  "/notifications/*": {
+    "target": "https://ilsdev.test.rero.ch",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/notifications": "https://ilsdev.test.rero.ch/notifications"
+    }
+  },
+  "/lang/*": {
+    "target": "https://ilsdev.test.rero.ch",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/api": "https://ilsdev.test.rero.ch/lang"
+    }
+  },
+  "/static/*": {
+    "target": "https://ilsdev.test.rero.ch",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/static": "https://ilsdev.test.rero.ch/static"
+    }
+  },
+  "/global/documents/*": {
+    "target": "https://ilsdev.test.rero.ch",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/global/documents": "https://ilsdev.test.rero.ch/global/documents"
+    }
+  },
+  "/aoste/documents/*": {
+    "target": "https://ilsdev.test.rero.ch",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/aoste/documents": "https://ilsdev.test.rero.ch/aoste/documents"
+    }
+  },
+  "/highlands/documents/*": {
+    "target": "https://ilsdev.test.rero.ch",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/highlands/documents": "https://ilsdev.test.rero.ch/highlands/documents"
+    }
+  },
+  "/fictive/documents/*": {
+    "target": "https://ilsdev.test.rero.ch",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/fictive/documents": "https://ilsdev.test.rero.ch/fictive/documents"
+    }
+  },
+  "/global/persons/*": {
+    "target": "https://ilsdev.test.rero.ch",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/global/persons": "https://ilsdev.test.rero.ch/global/persons"
+    }
+  },
+  "/aoste/persons/*": {
+    "target": "https://ilsdev.test.rero.ch",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/aoste/persons": "https://ilsdev.test.rero.ch/aoste/persons"
+    }
+  },
+  "/highlands/persons/*": {
+    "target": "https://ilsdev.test.rero.ch",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/highlands/persons": "https://ilsdev.test.rero.ch/highlands/persons"
+    }
+  },
+  "/fictive/persons/*": {
+    "target": "https://ilsdev.test.rero.ch",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/fictive/persons": "https://ilsdev.test.rero.ch/fictive/persons"
+    }
+  }
+}

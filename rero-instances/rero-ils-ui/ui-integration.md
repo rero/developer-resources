@@ -35,7 +35,23 @@ To integrate specific branches of ng-core and rero-ils-ui - in order to run Cypr
 
 ```
 cd path/to/rero-ils
-poetry run folding -c path/to/rero/ng-core -u path/to/rero/rero-ils-ui
+poetry run ./scripts/russian_dolls -c path/to/rero/ng-core -u path/to/rero/rero-ils-ui
 ```
 
 This script must be used after the bootstrap to overwrite it, otherwise the used versions of rero-ils ui and ng-core will be the npm published ones.
+
+## Run only the UI in local
+
+If you need to test a change only in the `rero-ils-ui`, you can use the 
+existing `ils-dev` testing instance as a backend. Make sure the server version 
+is compatible with your local UI.
+
+Place [the dev proxy file](dev.proxy.conf.json) in the root of the project and run:
+
+```bash
+ng serve --proxy-config dev.proxy.conf.json
+```
+
+You need Angular CLI in your environment: `npm install -g @angular/cli`
+
+Then sign in at: [http://localhost:4200/signin/](http://localhost:4200/signin/)
