@@ -23,6 +23,7 @@ Feel free to add:
 ### [Coding](coding/)
 
 * [python](coding/python.md)
+* [general recommendations](coding/recommendations.md)
 * [imports](coding/python-imports.md)
 * [RERO-ils specifics](coding/rero-ils-debug-specifics.md)
 * [how to configure editors](coding/editor-configurations.md)
