@@ -36,12 +36,12 @@ This page describes the process that we use to publish a new release of the RERO
    1. Check that:
       - the `staging` branch contains all PRs and branches planned for the release
       - the translations are up to date
-      - the `ng-core` version is the latest (if needed, publish a new version of [ng-core](#ng-core)).
    2. Update the `version` property in `package.json` file.
-   3. Run the command `npm i` to update `package-lock.json` file.
-   4. Update the `CHANGELOG.md` file [as described here][1].
-   5. Commit with message `release: v1.X.X`
-   6. Open a Pull Request for the release on the Github repository.
+   3. Update the `ng-core` version in `package.json` file if you use a new version of `ng-core`.
+   4. Run the command `npm i` to update `package-lock.json` file.
+   5. Update the `CHANGELOG.md` file [as described here][1].
+   6. Commit with message `release: v1.X.X`
+   7. Open a Pull Request for the release on the Github repository.
 3. **Publish NPM package (usually done by a developer)**
    1. Checkout to your local `staging` branch, make sure it's up to date with the
    remote `staging`.
