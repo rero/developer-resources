@@ -12,7 +12,7 @@ In all cases you should be in the working directory before launching any command
 
 To work on rero-ils and rero-ils-ui with maximal compatibility, we recommend using the following versions of NodeJS:
 
-- `>v14.15.0`, `>v16.0.0`
+- `>v14.15.0`, `<v16.0.0`
 
 :warning: When switching node versions in a backend application, run `poetry run invenio webpack clean`.
 
