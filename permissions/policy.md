@@ -77,10 +77,10 @@ For each action, we define a list of `Generators` (Permissions) to specify who h
 Each `Generator`, can implement 3 methods :
 
 - `needs()`: A list of needs allowing access to the resource.
-    - if no `need` is returned -> access denied because the intersection between the `needs` of the permissions and the `needs` of the user == 0.
-    - if at least one `need` of this list is provided to the identity of the connected user, it is valid. Condition **OR** !!!
+  - if no `need` is returned -> access denied because the intersection between the `needs` of the permissions and the `needs` of the user == 0.
+  - if at least one `need` of this list is provided to the identity of the connected user, it is valid. Condition **OR** !!!
 - `exclude()`: a list of `needs` that deny access to the resource.
-    - if only one of these `needs` is provided by the identity of the connected user, the Generator/permission will be denied. **The `exclude` always takes precedence over the `needs`!**
+  - if only one of these `needs` is provided by the identity of the connected user, the Generator/permission will be denied. **The `exclude` always takes precedence over the `needs`!**
 - `query_filter()` : TBD.
 
 ## ActionNeed and RoleActionAccess
@@ -127,7 +127,7 @@ TODO: Document the UI interactions as implemented.
 
 ## Conclusion
 
-We no longer restrict actions to roles but to actions. The actions that are linked to roles via a CLI command during `setup` (https://github.com/zannkukai/rero-ils/blob/zan-organisation-permissions/rero_ils/modules/cli/fixtures.py#L81-L105)
+We no longer restrict actions to roles but to actions. The actions that are linked to roles via a CLI command during `setup` (<https://github.com/zannkukai/rero-ils/blob/zan-organisation-permissions/rero_ils/modules/cli/fixtures.py#L81-L105>)
 
 - The 'fine' management of permissions is facilitated.
 - Customization of permissions would be possible (future US)

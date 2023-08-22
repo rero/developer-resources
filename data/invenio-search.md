@@ -4,7 +4,7 @@ Invenio module for information retrieval.
 
 ## Elasticsearch Mapping
 
-In order to be able to index records at least on mapping file should exists. The directory name is the index name, the file name is the document type by default. Example: `simple_app/mappings/records/records-v0.0.1.json` will create an index name `records-records-v0.0.1` a document type `records-v0.0.1` and add `records-records-v0.0.1` to the `records` alias. This mapping must be declared in the `setup.py` file as:
+In order to be able to index records at least one mapping file should exist. The directory name is the index name, the file name is the document type by default. Example: `simple_app/mappings/records/records-v0.0.1.json` will create an index name `records-records-v0.0.1` a document type `records-v0.0.1` and add `records-records-v0.0.1` to the `records` alias. This mapping must be declared in the `setup.py` file as:
 
 ```python
     'invenio_search.mappings': [
@@ -82,7 +82,7 @@ In order to be able to index records at least on mapping file should exists. The
 
 ## Command Line Interface
 
-More usefull commands is defined in [invenio-indexer](indexing/invenio-indexer.md)
+More useful commands are defined in [invenio-indexer](indexing/invenio-indexer.md)
 
 ```bash
 my_instance index --help         # usage

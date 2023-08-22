@@ -33,7 +33,7 @@ poetry run bootstrap -t ../rero-ils-ui/rero-rero-ils-ui-0.0.x.tgz
 
 To integrate specific branches of ng-core and rero-ils-ui - in order to run Cypress tests, for example - you must have the corresponding branch of each repo set locally. Then this command will launch a script to automatically integrate ng-core into rero-ils-ui, then rero-ils-ui in rero-ils:
 
-```
+```bash
 cd path/to/rero-ils
 poetry run ./scripts/russian_dolls -c path/to/rero/ng-core -u path/to/rero/rero-ils-ui
 ```
@@ -42,8 +42,8 @@ This script must be used after the bootstrap to overwrite it, otherwise the used
 
 ## Run only the UI in local
 
-If you need to test a change only in the `rero-ils-ui`, you can use the 
-existing `ils-dev` testing instance as a backend. Make sure the server version 
+If you need to test a change only in the `rero-ils-ui`, you can use the
+existing `ils-dev` testing instance as a backend. Make sure the server version
 is compatible with your local UI.
 
 Place [the dev proxy file](dev.proxy.conf.json) in the root of the project and run:

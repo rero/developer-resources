@@ -7,6 +7,7 @@ Invenio-Indexer is responsible for sending records for indexing in Elasticsearch
 ## Command Line Interface
 
 Some other commands is defined in [invenio-search](indexing/invenio-search.md)
+
 ```bash
 my_instance index --help          # usage
 my_instance index init            # create elasticsearch index and put mapping

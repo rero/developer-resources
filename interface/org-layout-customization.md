@@ -14,9 +14,9 @@ Tip & tricks about RERO-ILS theme customization.
   `RERO_ILS_THEME_ORGANISATION_CSS_ENDPOINT` variable, ie
   `https://resources.rero.ch/ils/test/`.
 
-### Some explanation
+### Some explanations
 
-Each organization have a *code*. For example *Libraries of the Britisch Minitry
+Each organization have a *code*. For example *Libraries of the British Ministry
 of Magic* has the code `highlands`. This implies a specific URL:
 `https://localhost:5000/highlands/`.
 

@@ -1,27 +1,14 @@
 # Python 3
 
-Python is a programming language that lets you work more quickly and integrate your systems more effectively.
+Python is a programming language that lets you work quickly and integrate your systems effectively.
 
-This document is wildly inspired from:  [Python 3 — Quick Reference Card](http://www.cs.put.poznan.pl/csobaniec/software/python/py-qrc.html)
+This document is inspired from: [Python 3 — Quick Reference Card](http://www.cs.put.poznan.pl/csobaniec/software/python/py-qrc.html)
 
-
-##### Table of Contents  
-1. [Data Types](#data-types)  
-2. [Loops](#loops)  
-3. [Function](#function)  
-4. [Input/Output](#io)
-5. [Exceptions](#exceptions)
-6. [Object-oriented programming
-](#object)  
-7. [Miscs](#miscs)  
-6. [References](#references)  
-
-<a name="data-types"></a>
 ## Data types
 
 ### Strings
 
-```
+```python
 s = "foo bar"
 s = 'foo bar'
 s = r"c:\dir\new"                     # raw (== 'c:\\dir\\new')
@@ -93,7 +80,6 @@ if (3 in S):
 S1+S2, S1-S2, S1^S2, S1|S2
 ```
 
-<a name="loops"></a>
 ## Loops
 
 ### For
@@ -124,7 +110,6 @@ while (count < 9):
    count = count + 1
 ```
 
-<a name="function"></a>
 ## Function
 
 ```python
@@ -146,7 +131,6 @@ foo(**D)                              # unpacking a dictionary of arguments
 foo.__doc__                           # the docstring
 ```
 
-<a name="io"></a>
 ## Input/Output
 
 ### Printing
@@ -206,7 +190,7 @@ print("Error!", file=sys.stderr, flush=True)
 os.rename(from, to)                  os.remove(path)
 os.chmod(file, 0700)                 os.stat(file)
 ```
-<a name="exceptions"></a>
+
 ## Exceptions
 
 ```python
@@ -226,7 +210,6 @@ finally:                              # on the way out
     ...                               # unhandled exc, release resources
 ```
 
-<a name="object"></a>
 ## Object-oriented programming
 
 ```python
@@ -252,7 +235,7 @@ class Worker(Person):
 bob = Worker("Bob Smith", "developer", 25)
 print(bob)
 ```
-<a name="miscs"></a>
+
 ## Miscs
 
 ### os module
@@ -297,9 +280,9 @@ for x in filter(lambda i: i<5, L):    # returns [1, 4]
 for x in map(lambda: x: x*2, L):      # returns [2, 8, 14]
 ```
 
-# Project Files Hierarchy
+## Project Files Hierarchy
 
-```
+```bash
 my_project/
   my_module/
     __init__.py
@@ -311,7 +294,6 @@ my_project/
   pytest.ini                      # config file
 ```
 
-<a name="references"></a>
 ## References
 
 1. [The Python Tutorial](https://docs.python.org/3/tutorial)

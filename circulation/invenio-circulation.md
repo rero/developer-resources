@@ -2,12 +2,11 @@
 
 `invenio-circulation` is a module used in RERO-ils to manage item loans.
 
-RERO have a specific repository to develop and enhance `invenio-circulation`
-module. You can find documentation on [RERO circulation module][1].
+RERO ILS uses a specific module to develop and enhance `invenio-circulation` module. You can find documentation on [RERO circulation module][1].
 
-[1]: /circulation/circulation-module.md 
+[1]: /circulation/circulation-module.md
 
-# Install and test
+## Install and test
 
 You first need `invenio-circulation` branch from Github. Choose among one of:
 
@@ -40,7 +39,7 @@ cd ../invenio-circulation
 pipenv run python setup.py test
 ```
 
-# Developing with rero-ils and invenio-circulation
+## Developing with rero-ils and invenio-circulation
 
 In **rero-ils** directory (`git@github.com:rero/rero-ils.git` repository), you need to change **pyproject.toml**. Especially this line:
 

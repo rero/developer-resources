@@ -2,7 +2,7 @@
 
 Cypress is a next generation front end testing tool built for the modern web. Complete documentation can be found [here](https://docs.cypress.io/guides/overview/why-cypress.html#In-a-nutshell).
 
-This tool is integrated to RERO-ILS and the following documentation explains how to use it.
+:warning: RERO+ projects do not use Cypress anymore as we don't have enough resources to maintain it operational, this documentation is kept for information.
 
 ## Prerequisites
 
@@ -61,6 +61,7 @@ The test runner is described in details [here](https://docs.cypress.io/guides/co
 ## Configuration
 
 The configuration of cypress is set in cypress.json file. The current settings are:
+
 * The base url, as recommended in the [best practices](https://docs.cypress.io/guides/references/best-practices.html#Setting-a-global-baseUrl)
 * The default command timeout
 * The response timeout (for API url)
@@ -75,6 +76,7 @@ You can override configuration options using `--config` flag. See the [documenta
 ```bash
 ./node_modules/.bin/cypress open --config baseUrl=http://ilsdev.test.rero.ch
 ```
+
 ## Writing the tests
 
 ### File organisation
@@ -86,6 +88,7 @@ An example test and an empty template are available in **tests/e2e/cypress/cypre
 #### Custom commands
 
 In order to have re-usable code, some custom commands are listed here: **tests/e2e/cypress/cypress/support**. They are sorted by type:
+
 * api.js
 * circulation.js
 * collection.js
@@ -99,8 +102,10 @@ All these files must be declared in index.js to be able to use the commands in t
 For more informations, read the corresponding documentation [here](https://docs.cypress.io/api/cypress-api/custom-commands.html#Syntax).
 
 #### API requests
+
 **api.js** is used to declare API requests in order to perform actions that shouldn't be part of the UI testing (create a document and and item to test circulation actions, and then delete them, for example).
 This file contains custom commands to:
+
 * create an item
 * create a document
 * delete a resource
@@ -108,6 +113,7 @@ This file contains custom commands to:
 #### Fixtures
 
 Some fixtures are stored in **tests/e2e/cypress/cypress/fixtures** in order to have re-usable data for the tests. Existing fixtures are:
+
 * collections.json
 * common.json
 * documents.json
@@ -124,7 +130,6 @@ The [selector playground](https://docs.cypress.io/guides/core-concepts/test-runn
 
 In countrary to what is said in [best practices](https://docs.cypress.io/guides/references/best-practices.html#Selecting-Elements), the context of RERO-ILS projects asks not to use specific attributes for DOM element selecting. Here is a list of selector we should use:
 
-
 | Selectors | Example | Usage |
 | --- | --- | ---|
 | Id  | `cy.get('#main').click()` | Better |
@@ -136,7 +141,7 @@ In countrary to what is said in [best practices](https://docs.cypress.io/guides/
 
 In order to preserve authentication information between the tests, use the login command in the `before` part of the test and use the following instruction in the beforeEach part (see `example-test-request.spec.js`):
 
-```
+```javascript
   beforeEach('Action to perform before each test', function() {
     // Preserve authentication information between the tests
     Cypress.Cookies.preserveOnce('session');
@@ -146,8 +151,10 @@ In order to preserve authentication information between the tests, use the login
 ### Aliases
 
 Cypress allows to store values as aliases. This can be used in different ways:
+
 * To store a value from the response of a request:
-```
+
+```javascript
 cy.request({
     method: 'POST',
     url: '/api/items/',
@@ -161,24 +168,30 @@ cy.request({
     cy.wrap(body.id).as('getItemPid'); // Stores the item pid as an alias
   })
   ```
+
 * To store a route:
-```
+
+```javascript
 cy.route('/api/permissions/documents/*').as('getDocumentPermissions'); // Stores the route
 ```
+
 * To store a selected DOM element:
-```
+
+```javascript
 cy.get(#account-menu).as('accountMenu');
 ```
 
 Those aliases can be retrieved later, or even from a command into a test file:
-```
+
+```javascript
 cy.get('@getItemPid');
 cy.wait('@getDocumentPermissions'); // This particular case is developed below
 cy.get('@accountMenu');
 ```
 
 They can also be stored in a local variable:
-```
+
+```javascript
 let documentPid;
 cy.get('@getDocumentPid').then((pid) => {
     // Store document pid to re-use it later (an alias is deleted in the 'after' part of the test)
@@ -194,7 +207,8 @@ A list of assertions is available [here](https://docs.cypress.io/guides/referenc
 
 In order to allow enough time to display the elements of the views, the default command timeout was set to 2 minutes.
 In some cases, a better solutions is needed: wait on an request and on its response. Here is a basic example:
-```
+
+```javascript
 // Spy a route using an alias (this needs to be done early enough to start to listen to the route before using it)
 cy.intercept({'DELETE','/api/items/*'}).as('deleteItem');
 

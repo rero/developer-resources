@@ -1,7 +1,6 @@
 # Developer Resources
 
-This documentation project serves as a starting point and reference for contributors of RERO+ projects. It summarizes technologies and modules used to develop and create an [Invenio
-application][1], and more specifically a [RERO ILS application][2].
+This documentation project serves as a starting point and reference for contributors of RERO+ projects. It summarizes technologies and modules used to develop and create an [Invenio application][1], and more specifically a [RERO ILS application][2].
 
 Feel free to add:
 
@@ -13,62 +12,55 @@ Feel free to add:
 [1]: https://invenio.readthedocs.io
 [2]: https://github.com/rero/rero-ils
 
-## Table of Contents
+## Circulation
 
-### [Circulation](circulation/)
-
-* [invenio-circulation module](circulation/invenio-circulation.md)
+* [`invenio-circulation` module](circulation/invenio-circulation.md)
 * [RERO-ILS circulation module](circulation/circulation-module.md)
 
-### [Coding](coding/)
+## Coding
 
-* [python](coding/python.md)
-* [general recommendations](coding/recommendations.md)
-* [imports](coding/python-imports.md)
-* [RERO-ils specifics](coding/rero-ils-debug-specifics.md)
-* [how to configure editors](coding/editor-configurations.md)
+* [Python](coding/python.md)
+* [General recommendations](coding/recommendations.md): imports, typing, serialization, etc.
+* [RERO ILS Debugging](coding/rero-ils-debug-specifics.md)
+* [Editor configuration](coding/editor-configurations.md)
 
-### [Data](data/README.md)
+## Data
 
 * [Data graph generation](data/data-graph-generation.md): generate graph to
   visualize data structure
 * [Resource relations](data/resource-relations.md)
 
-#### Data model
+### Data model
 
-* [jsonschema](data/jsonschema.md)
-* [guidelines on how to write a JSON schema](data/jsonschema.md#guidelines)
-* [checklist](data-model-checklist.md) for implementing a new field in the
-  data model
+* [Jsonschema](data/jsonschema.md): how to write a jsonschema for RERO+ apps
+* [Checklist](data/data-model-checklist.md) for implementing a new field in the data model
 
-#### [Database](data/README.md#database)
+### Database
 
-All database stuffs.
+All database stuff.
 
-* [invenio-db](data/invenio-db.md)
-* [invenio-pidstore](data/invenio-pidstore.md)
-* [invenio-records](data/invenio-records.md)
-* [sqlalchemy](data/sqlalchemy.md)
+* [`invenio-db` module](data/invenio-db.md)
+* [`invenio-pidstore` module](data/invenio-pidstore.md)
+* [`invenio-records` module](data/invenio-records.md)
+* [Sqlalchemy](data/sqlalchemy.md)
   * examples: [data/examples/](data/examples/)
 * [PID reservation (CLI)](data/pid-reservation.md)
 * [POST MARCXML via CURL and access token](data/post-marcxml-curl.md)
 
-#### [Indexing](data/README.md#indexing)
+### Indexing
 
-* [elasticsearch](data/elasticsearch.md)
-* [invenio-indexer](data/invenio-indexer.md)
-* [invenio-records-rest](data/invenio-records-rest.md)
-* [invenio-search](data/invenio-search.md)
-
-### [Documentation of the projects](documentation/README.md)
-
-* [how to generate a changelog](documentation/generate-changelog.md)
+* [Elasticsearch](data/elasticsearch.md)
+* [`invenio-indexer` module](data/invenio-indexer.md)
+* [`invenio-records-rest` module](data/invenio-records-rest.md)
+* [`invenio-search` module](data/invenio-search.md)
 
 ### Git & GitHub
 
 * [git](git-github/git.md)
 * [git workflow](git-github/workflow.md)
 * [pull request creation](git-github/pull-rquests.md)
+* [How to publish a release](rero-instances/release-publication.md)
+* [How to generate a changelog](rero-instances/generate-changelog.md)
 
 ### Interface
 
@@ -78,10 +70,8 @@ All database stuffs.
 * [invenio-search-ui](interface/invenio-search-ui.md)
 * [nvm](interface/nvm.md)
 * [layout charter](interface/layout-charter.md)
-* [layout for document views (textual
-  representation)](interface/layout-document-views.md)
-* [Organisation views layout
-  customization](interface/org-layout-customization.md)
+* [layout for document views (textual representation)](interface/layout-document-views.md)
+* [Organisation views layout customization](interface/org-layout-customization.md)
 
 ### Invenio
 
@@ -90,20 +80,16 @@ All database stuffs.
 
 ### Permissions
 
-- [Permissions policy](permissions/policy.md)
-- [invenio-user-management](permissions/invenio-user.md)
-- [Generate access token](permissions/generate_oauth_token.md)
+* [Permissions policy](permissions/policy.md)
+* [invenio-user-management](permissions/invenio-user.md)
+* [Generate access token](permissions/generate_oauth_token.md)
 
 ### [RERO projects and instances](rero-instances/README.md)
 
-* pyenv
 * [docker](rero-instances/docker.md)
 * [poetry](rero-instances/poetry.md)
-* [How to publish a release](rero-instances/release-publication.md)
-* [`russian_dolls`][1]: to install `ng-core` in `rero-ils-ui` and `rero-ils-ui`
+* [`russian_dolls`](https://github.com/rero/rero-ils/blob/staging/scripts/russian_dolls): to install `ng-core` in `rero-ils-ui` and `rero-ils-ui`
   in `rero-ils`.
-
-[1]: https://github.com/rero/rero-ils/blob/staging/scripts/russian_dolls
 
 #### [ng-core](rero-instances/README.md#ng-core)
 
@@ -117,8 +103,7 @@ All database stuffs.
 
 * [Useful commands](rero-instances/useful-commands.md)
 * [Migrate from a NodeJS version to another](interface/nvm.md#migration)
-* [UI integration](rero-instances/rero-ils-ui/ui-integration.md):
-  how to integrate UI in RERO-ILS
+* [UI integration](rero-instances/rero-ils-ui/ui-integration.md): how to integrate UI in RERO-ILS
 
 ### Tests
 

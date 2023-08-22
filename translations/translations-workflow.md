@@ -1,15 +1,5 @@
 # Translations workflow
 
-## Table of contents
-
-1. [Introduction][6]
-1. [The regular workflow][3]
-   1. [From a developer point of view][13]
-   1. [From a translation manager point of view][14]
-1. [Some weblate settings][5]
-1. [Troubleshootings][11]
-1. [Tips for the translators][8]
-
 ## Introduction
 
 We're using weblate as a web service to help the translation process, through
@@ -57,20 +47,21 @@ Weblate :arrow_left: Github (`translations`) :arrow_left: Github (`staging`)
 *when all PRs from a Release-Candidate have been merged into `staging`, we need to extract the messages and push them to Weblate so that they can be translated.*
 
 1. Ensure that all Weblate changes have been committed and merged to `upstream/translations` ([see push translations](#push-translations)).
-2. Lock the Weblate component so that no further changes are made.
-2. Switch to your local `translations` branch and pull the changes from `upstream/translations`.
-4. Rebase this branch onto staging `git pull --rebase upstream staging`.
-3. On your local `translations`, extract the messages and check that everything looks good.
+1. Lock the Weblate component so that no further changes are made.
+1. Switch to your local `translations` branch and pull the changes from `upstream/translations`.
+1. Rebase this branch onto staging `git pull --rebase upstream staging`.
+1. On your local `translations`, extract the messages and check that everything looks good.
    1. Angular projects: `npm ci` to compile the project, `npm run extract_messages` to extract the strings from the code to the master messages file.
    2. Python projects: `poetry run python ./setup.py extract_messages` to extract the strings from the code to the master messages file.
-4. Update the catalog so that all langugage files are updated.
-   1. Angular projects: `npm run update_catalog`
-   2. Python projects: `poetry run python ./setup.py update_catalog --no-fuzzy-matching --ignore-obsolete true`
-5. Commit with message `translations: extract messages`.
-6. Push your local `translations` branch to upstream with `git push upstream translations`.
-7. Unlock the Weblate component.
-8. Check on Weblate that the new strings have been added for translation.
-9. Inform [the translation team](https://gitter.im/rero/reroils-translations) that there are new translations available.
+1. Update the catalog so that all langugage files are updated.
+   1. Angular projects: `npm run update_catalog --no-fuzzy-matching`
+   2. Python projects: `poetry run python ./setup.py update_catalog --no-fuzzy-matching`
+1. Commit with message `translations: extract messages`.
+1. Force push your local `translations` branch to upstream with `git push upstream translations -f`.
+1. Unlock the Weblate component.
+1. In Weblate, use `Maintenance` -> `Reset` to force-sync Weblate and Github.
+1. Check that the new strings have been added for translation.
+1. Inform [the translation team](https://gitter.im/rero/reroils-translations) that there are new translations available.
 
 Weblate :arrow_right: Github (`translations`) :arrow_right: Github (`staging`)
 
@@ -80,10 +71,10 @@ Weblate :arrow_right: Github (`translations`) :arrow_right: Github (`staging`)
 2. Lock the Weblate component so that no further changes are made.
 3. Ensure that our local `staging` is up to date with `upstream/staging`.
 4. Switch to your local `translations` branch and pull the changes from `upstream/translations`.
-5. Rebase your `translations` branch onto `staging`: `git rebase staging`.
+5. Ensure that your `translations` branch contains all commits from `staging`: `git rebase staging`.
 6. If there are multiple translation commits, sqash them into one with `git rebase -i HEAD~4` (4 being the number of commits to sqash). See [this section](#commit-sqashing) for details.
 7. Switch to `staging` and `git rebase translations`.
-8. If everything went as expected, only your one translation commit has been added to the tree. Either push upstream (`git push upstream staging`). If you want reviews, create a PR from the `translations` branch on the `staging` branch and merge it when validated.
+8. If everything went as expected, only your one translation commit has been added to the tree. Push upstream (`git push upstream staging`), without force push. If you can't regular push, this means your commit tree is incorrect.
 9. Force-push your local `translations` branch to `upstream:translations` so that `staging` and translations are at the same commit.
 10. In Weblate, use `Maintenance` -> `Reset` to force-sync Weblate and Github.
 11. Unlock the Weblate component to allow translators to work.
@@ -92,13 +83,12 @@ Weblate :arrow_right: Github (`translations`) :arrow_right: Github (`staging`)
 
 Weblate creates one commit per language when pushing changes. In order to limit the number of commits created by Weblate in the repositories, translation commits are sqashed into one before being pushed back to `upstream/translations`. To simplify this process, the commit message should look like the following template:
 
-```bash
+```md
 translations: translate vX.X.X
 
 Translate-URL: https://hosted.weblate.org/projects/rero_plus/rero-ils/
 # Adapt this link to the component
 
-Co-Authored-by: Nicolas Prongué <n.prongue@outlook.com>
 Co-Authored-by: Pascal Repond <pascal.repond@rero.ch>
 # If needed, add all contributors that specifically participated to this particular commit (optional)
 ```
@@ -113,7 +103,7 @@ Co-Authored-by: Pascal Repond <pascal.repond@rero.ch>
   `public-search`, `admin`). This is needed, as in our angular project, the
   source language file is the same as a translated language files.
 - [component/settings/files]: filter: `^(?!(messages)$).+$` (for `sonar-ui`).
-  The same as the precedent setting, but adapted to the `sonar-ui`
+  The same as the previous setting, but adapted to the `sonar-ui`
   configuration.
 - on each component, [addons]:
   - automatic translations, suggest strings for non translated strings, use
@@ -124,17 +114,16 @@ Co-Authored-by: Pascal Repond <pascal.repond@rero.ch>
   - only for JSON based component, customize JSON output, with 2 space for
       indentation.
 
-## Troubleshootings
+## Troubleshooting
 
-- If, for any reason, the github branch that has been define as a weblate
+- If, for any reason, the github branch that has been defined as a weblate
   corresponding branch (Composant settings, Version control, Repository
   branch), has been forced push, **use the reset command either on the weblate
   web interface, or with the `wlc` client**.
 - At leat once, changes couldn't be committed if the remote repository branch
   moved. Apparently weblate wait until the local branch is up to date with the
   remote branch *before* committing changes. Changes that aren't committed will
-  be lost when the local branch is going to be updated. **As a result, we may
-  need a translation dedicated branch on the remote repository (github)**.
+  be lost when the local branch is going to be updated. **As a result, we use a translation dedicated branch on the remote repository (github)**.
 
 ## Tips for the translators
 
@@ -160,17 +149,5 @@ Co-Authored-by: Pascal Repond <pascal.repond@rero.ch>
 
 ![Weblate Summary](intro_weblate.jpg)
 
-[1]: https://docs.weblate.org/en/latest/admin/continuous.html#automatically-receiving-changes-from-github
-[2]: https://docs.weblate.org/en/latest/admin/continuous.html#avoiding-merge-conflicts
-[3]: #the-regular-workflow
-[4]: https://docs.weblate.org/en/latest/wlc.html
-[5]: #some-weblate-settings
-[6]: #introduction
-[7]: #the-very-first-time
-[8]: #tips-for-the-translators
 [9]: https://docs.weblate.org
 [10]: https://docs.weblate.org/en/latest/user/translating.html
-[11]: #troubleshootings
-[12]: https://hosted.weblate.org/projects/rero_plus/
-[13]: #from-a-developer-point-of-view
-[14]: #from-a-translation-manager-point-of-view

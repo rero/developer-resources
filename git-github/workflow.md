@@ -1,14 +1,14 @@
 # Git and GitHub workflow
 
 :warning: [github-cli][1] may help you in this workflow, especially to view or
-test PRs of other contributors. You're encouraged to discover it's
+test PRs of other contributors. You're encouraged to discover its
 possibilities.
 
 ## Main branches
 
 The main RERO ILS `git` repository has two main branches:
 
-1. The `master` branch stays at the last official release tag.
+1. The `master` branch stays at the latest official release tag.
 1. The `staging` branch (default branch) contains the work being done during a
    sprint, between two releases. When the `staging` branch is ready for a
    release, the `staging` branch is pushed into `master`. \
@@ -31,8 +31,8 @@ Each deployment branch is built as needed, especially the `ils_dev` branch that
 may contain all the commits that need to be tested. On these branches, force
 pushing is not an issue, as they aren't used for development.
 
-For the production server, they are at least three branches, allowing to
-quickly revert to a precedent version: latest and two precedent tags.
+For the production server, there are at least three branches, allowing to
+quickly revert to a precedent version: latest and two previous tags.
 
 - for [bib.rero.ch][prod]: `bib-latest`, `bib-1.4.10`, `bib-1.4.9` (for
   example, here the latest being the `v1.4.11`), corresponding to three images

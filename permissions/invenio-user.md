@@ -1,18 +1,19 @@
-## Basic Information
-```
+# Basic Information
+
 Three Invenio modules ara available to manage the Invenio users, groups and permissions
-```
 
 ## 1. Invenio-Accounts
-```
+
 Invenio user management and authentication
-```
+
 ### Installation
+
 ```python
 pip install -e git+https://github.com/inveniosoftware/invenio-accounts.git#egg=invenio-accounts
 ```
 
 ### Examples
+
 ```python
 create a new user: 
   invenio users create  -a software@rero.ch --password rero21
@@ -24,15 +25,17 @@ activate a user
 ```
 
 ## 2. Invenio-Access
-```
-Invenio authentication and authorization system 
-```
+
+Invenio authentication and authorization system
+
 ### Installation
+
 ```python
 pip install -e git+https://github.com/inveniosoftware/invenio-access.git#egg=invenio-access
 ```
 
 ### Examples
+
 #### Roles
 
 ```python
@@ -44,6 +47,7 @@ add user to role:
   invenio roles add user_name role_name
 
 ```
+
 #### Actions
 
 ```python
@@ -63,15 +67,17 @@ Remove existing action authorization !!!
 ```
 
 ## 3. Invenio-Admin
-```
-Administration interface for Invenio applications 
-```
+
+Administration interface for Invenio applications
+
 ### Installation
+
 ```python
 pip install -e git+https://github.com/inveniosoftware/invenio-admin.git#egg=invenio-admin
 ```
 
 ### Invenio Configuration and URL
+
 ```python
 Config: 
 Must disable parameter APP_ENABLE_SECURE_HEADERS in 
@@ -79,4 +85,3 @@ reroils-app/reroils_app/config.py
 
 URL: localhost:5000/admin
 ```
-

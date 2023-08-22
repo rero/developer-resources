@@ -35,7 +35,7 @@ If a URL need an authentication, a token can be passed with the header option:
 
 After the test, a JSON output is displayed, like the following:
 
-```
+```json
 {
     "transactions": 2189, // Total transactions done
     "availability": 100.00, // Percentage of the availibility of the server

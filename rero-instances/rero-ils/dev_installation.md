@@ -4,10 +4,10 @@
 
 First install these tools on your operating system:
 
-  * pyenv
-  * nvm
-  * pip
-  * docker and docker-compose
+* pyenv
+* nvm
+* pip
+* docker and docker-compose
 
 Then install `poetry` and Python >3.9:
 
@@ -20,7 +20,7 @@ pip install --user poetry
 
 At the end of this chapter your directory will look like this:
 
-```
+```bash
 rero
 ├── ils
 │   └── .env
@@ -89,7 +89,7 @@ Launch rero-ils server:
 poetry run poe server
 ```
 
-# Reinstall development environment
+## Reinstall development environment
 
 We consider `rero-ils` project is located in **/home/user/rero/rero-ils** directory.
 
@@ -104,7 +104,7 @@ docker volume prune --force
 
 Then flush your poetry installation:
 
-```
+```bash
 poetry env remove $(poetry env list|cut -d " " -f 1)
 ```
 
@@ -127,4 +127,4 @@ And finally launch server:
 poetry run poe server
 ```
 
-https://localhost:5000 and https://localhost:5000/professional/ should be available.
+[https://localhost:5000](https://localhost:5000) and [https://localhost:5000/professional/](https://localhost:5000/professional/) should be available.

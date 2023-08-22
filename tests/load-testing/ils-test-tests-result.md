@@ -3,6 +3,7 @@
 ## Without delay between requests (benchmark)
 
 ### 1 concurrent user
+
 ```json=
 {
     "transactions": 2189,
@@ -21,6 +22,7 @@
 ```
 
 ### 5 concurrent users
+
 ```json=
 {
     "transactions": 9227,
@@ -39,6 +41,7 @@
 ```
 
 ### 10 concurrent users
+
 ```json=
 {
     "transactions": 13972,
@@ -57,6 +60,7 @@
 ```
 
 ### 25 concurrent users
+
 ```json=
 {
     "transactions": 16796,
@@ -75,6 +79,7 @@
 ```
 
 ### 50 concurrent users
+
 ```json=
 {
     "transactions": 18760,
@@ -93,6 +98,7 @@
 ```
 
 ### 75 concurrent users
+
 ```json=
 {
     "transactions": 18696,
@@ -111,6 +117,7 @@
 ```
 
 ### 100 concurrent users
+
 ```json=
 {
     "transactions": 18483,
@@ -129,6 +136,7 @@
 ```
 
 ### 150 concurrent users
+
 ```json=
 {
     "transactions": 18942,
@@ -147,6 +155,7 @@
 ```
 
 ### 200 concurrent users
+
 ```json=
 {
     "transactions": 19708,
@@ -165,6 +174,7 @@
 ```
 
 ### 250 concurrent users
+
 ```json=
 {
     "transactions": 18041,
@@ -185,6 +195,7 @@
 ## With a random delay between 1 and 10 seconds
 
 ### 1 concurrent user
+
 ```json=
 {
     "transactions": 128,
@@ -203,6 +214,7 @@
 ```
 
 ### 5 concurrent users
+
 ```json=
 {
     "transactions": 817,
@@ -221,6 +233,7 @@
 ```
 
 ### 10 concurrent users
+
 ```json=
 {
     "transactions": 1277,
@@ -239,6 +252,7 @@
 ```
 
 ### 25 concurrent users
+
 ```json=
 {
     "transactions": 3533,
@@ -257,6 +271,7 @@
 ```
 
 ### 50 concurrent users
+
 ```json=
 {
     "transactions": 6576,
@@ -275,6 +290,7 @@
 ```
 
 ### 75 concurrent users
+
 ```json=
 {
     "transactions": 9499,
@@ -293,6 +309,7 @@
 ```
 
 ### 100 concurrent users
+
 ```json=
 {
     "transactions": 13192,
@@ -311,6 +328,7 @@
 ```
 
 ### 150 concurrent users
+
 ```json=
 {
     "transactions": 16572,
@@ -329,6 +347,7 @@
 ```
 
 ### 200 concurrent users
+
 ```json=
 {
     "transactions": 18937,
@@ -347,6 +366,7 @@
 ```
 
 ### 250 concurrent users
+
 ```json=
 {
     "transactions": 18837,
@@ -365,6 +385,7 @@
 ```
 
 ## List of executed commands
+
 ```shell=
 siege --benchmark --time=120S --concurrent=1 --internet --log="/Users/sebastiendeleze/Desktop/siege.log" --file="/Users/sebastiendeleze/Desktop/urls" --mark="B-1" --header "Authorization: Bearer QPr7oUsjUsG6c5uCCPWOq6vA7a1OzejAU1dwyLuhGqC0hDfX8SACJPswZLW1"
 siege --benchmark --time=120S --concurrent=5 --internet --log="/Users/sebastiendeleze/Desktop/siege.log" --file="/Users/sebastiendeleze/Desktop/urls" --mark="B-5" --header "Authorization: Bearer QPr7oUsjUsG6c5uCCPWOq6vA7a1OzejAU1dwyLuhGqC0hDfX8SACJPswZLW1"
@@ -390,7 +411,7 @@ siege --delay=10 --time=120S --concurrent=250 --internet --log="/Users/sebastien
 
 ## List of links
 
-```
+```bash
 https://ils.test.rero.ch/
 https://ils.test.rero.ch/signin/?next=%2F%3F
 https://ils.test.rero.ch/signup/

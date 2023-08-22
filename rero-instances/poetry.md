@@ -4,7 +4,7 @@ Poetry is a free and open source python packaging and dependency management syst
 
 It's an alternative to the famous [pipenv](https://pipenv.pypa.io/en/latest/) command.
 
-# Main commands
+## Main commands
 
 Basic commands:
 
@@ -18,11 +18,11 @@ poetry config virtualenvs.path /home/project/my_venv --local # change CURRENT PR
 poetry run invenio --help # runs `invenio --help` in a virtualenv from the current project
 ```
 
-# Configuration
+## Configuration
 
 `poetry config --list` gives you :
 
-```
+```bash
 cache-dir = "/home/od/.cache/pypoetry"
 virtualenvs.create = true
 virtualenvs.in-project = false
@@ -37,9 +37,9 @@ To change the value **only for the current project**, simply add `--local` (i.e.
 
 To reset a value: `poetry config virtualenvs.path --unset`. Change *virtualenvs.path* with the parameter you want to reset.
 
-# Tips
+## Tips
 
-## Keep configuration in a specific project
+### Keep configuration in a specific project
 
 You can use a **poetry.toml** file with a content similar to:
 
@@ -50,12 +50,12 @@ in-project = true
 path = "/home/user/project/.venv"
 ```
 
-## Remove all current project virtual environments
+### Remove all current project virtual environments
 
 ```bash
 poetry env remove $(poetry env list|cut -d " " -f 1)
 ```
 
-# References
+## References
 
 * [Official documentation](https://python-poetry.org/docs/)

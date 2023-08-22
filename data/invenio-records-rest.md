@@ -186,6 +186,7 @@ RECORDS_REST_DEFAULT_SORT = dict(
     records=dict(query='bestmatch', noquery='mostrecent'),
 )
 ```
+
 ## References
 
 1. [Official Documentation](http://pythonhosted.org/invenio-records-rest)

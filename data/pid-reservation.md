@@ -1,8 +1,6 @@
-# RERO-ILS CLI Commands
+# PID Reservation
 
-## PID Reservation
-
-To reserve a range of pids for future records loading, 
+To reserve a range of pids for future records loading,
 reserved pids will have the status `RESERVED`.
 
 For information on how to use the new cli:
@@ -15,7 +13,7 @@ Available options:
 
 ```bash
     - pid_type: the pid type of the resource as configured in config.py,
-     	 --  example: itm for the item resource
+      - example: itm for the item resource
     - records_number: number of new records(with pids) to load.
     - unused: set that the status of unused (gaps) pids to NEW. 
 ```
@@ -36,5 +34,3 @@ To:
 ```bash
 pipenv run invenio utils reserve_pid_range -p org -n 2 -u
 ```
-
-

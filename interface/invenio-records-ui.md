@@ -15,7 +15,7 @@ RECORDS_UI_ENDPOINTS = dict(
 
 Replace the recid as title to the real title of the document.
 
-####  1. create a new template for the detailed view:
+### 1. create a new template for the detailed view
 
 ```bash
 touch my_instance/templates/my_instance/detail.html
@@ -23,7 +23,7 @@ touch my_instance/templates/my_instance/detail.html
 
 Note: do not forget to run the static file collect: `my_instance collect -v`
 
-#### 2. set the `RECORDS_UI_ENDPOINTS.template` to the new file
+### 2. set the `RECORDS_UI_ENDPOINTS.template` to the new file
 
 ```python
 RECORDS_UI_ENDPOINTS = dict(
@@ -35,7 +35,7 @@ RECORDS_UI_ENDPOINTS = dict(
 
 ```
 
-#### 3. set the content of the file:
+### 3. set the content of the file
 
 ```html
 <!-- inheritance -->
@@ -48,7 +48,6 @@ RECORDS_UI_ENDPOINTS = dict(
 </h2>
 {%- endblock %}
 ```
-
 
 ## References
 

@@ -2,7 +2,7 @@
 
 Invenio module that stores and registers persistent identifiers.
 
-## Client Line Interface
+## Command Line Interface
 
 ``` bash
 my_instance pid --help        # usage
@@ -11,16 +11,16 @@ my_instance pid --help        # usage
 ## Concepts
 
 - `PersistentIdentifier`: for working with persistent identifiers ( create, reserve, register, delete, and redirect). It contains:
-    - `pid_type`: persistent identifier schema (i.e. doi)
-    - `pid_value`: persistent identifier (i.e. 10.1234/foo)
-    - `object_type`: object type (i.e. rec for record).
-    - `object_uuid`: object id
-    - `status`: status of persistent identifier:
-        - `NEW`: PID has *not* yet been registered with the service provider
-        - `RESERVED`: PID reserved in the service provider but not yet fully registered
-        - `REGISTERED`: PID has been registered with the service provider
-        - `REDIRECTED`: PID has been redirected to another persistent identifier
-        - `DELETED`: PID has been deleted/inactivated with the service provider
+  - `pid_type`: persistent identifier schema (i.e. doi)
+  - `pid_value`: persistent identifier (i.e. 10.1234/foo)
+  - `object_type`: object type (i.e. rec for record).
+  - `object_uuid`: object id
+  - `status`: status of persistent identifier:
+    - `NEW`: PID has *not* yet been registered with the service provider
+    - `RESERVED`: PID reserved in the service provider but not yet fully registered
+    - `REGISTERED`: PID has been registered with the service provider
+    - `REDIRECTED`: PID has been redirected to another persistent identifier
+    - `DELETED`: PID has been deleted/inactivated with the service provider
 - `Resolver`: given a persistent identifier retrieve the assigned internal object. Only object with `REGISTERD` status is returned without exception.
 - `Providers`: wrappers around a persistent identifier to provide extra functionality (e.g. interaction with remote services). Usually used by minters.
 - `Minters`: small functions that are responsible for minting a specific persistent identifier type for a specific internal object type in as automatic way as possible.
@@ -43,7 +43,6 @@ from invenio_pidstore.errors import PIDAlreadyExists
 ### PersistentIdentifier
 
 Most of the time pids are managed with minters.
-
 
 ```python
 
@@ -127,6 +126,7 @@ db.session.commit()
 pid = RecordIdProvider.get(pid_value='1').pid            # get the pid given a pid_value
 assert rec.id == pid.object_uuid                         # check ids
 ```
+
 __Note__: do not mix provider with manual pid assignment
 
 ### Minters

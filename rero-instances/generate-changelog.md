@@ -2,9 +2,8 @@
 
 Use [PyChangelog][1].
 
-It's a Python tool that reads a github project event data through github's
-API and generate a changelog with sections about fixed bugs (issues with the
-bug tag), fixed issues, and merged PRs.
+It's a Python tool that reads a github project event data through Github's
+API and generates a changelog with sections about fixed issues, and merged PRs.
 
 [1]: https://github.com/rero/pychangelog
 
@@ -17,25 +16,27 @@ bug tag), fixed issues, and merged PRs.
 
 1. Edit the following in `config.ini`:
    1. `repo`: the name of the project (`rero-ils`, `rero-ils-ui`, `sonar`, ...)
-   2. `from_tag` and `to_tag`: Title of latest release (e.g. `v1.10.0`) and 
+   2. `from_tag` and `to_tag`: Title of latest release (e.g. `v1.10.0`) and
    title of next release (e.g. `v1.11.0`).
 2. Run `poetry run ./changelog.py --token <your-github-token>`
 3. Check `PYCHANGELOG.md` for your changelog
-4. Copy the generated changelog from `PYCHANGELOG.md` to the top of your 
+4. Copy the generated changelog from `PYCHANGELOG.md` to the top of your
 project's `CHANGELOG.md`.
+
+:warning: With poetry >1.5.0, `poetry run ./changelog.py` might not work because of path problems. If that happens, just put `changelog.py` in a folder and run it from there. E.g. `poetry run /changelog/changelog.py`
 
 ### Verification
 
 1. After generating a changelog, check carefully that:
    * Only the new release has been added to the `CHANGELOG.md` file
-   * The listed issues and PRs correspond to the ones that have been 
+   * The listed issues and PRs correspond to the ones that have been
    closed/merged for this release (not more, not less!)
-2. Manually fix any blatantly unclear or non-pertinent info in the generated 
-list. If necessary, edit the issue directly in Github and generate the 
-changelog again. Sometimes issues are closed wihtout being fixed. If someone 
-closed an issue and forogt to tag it as `stale`, `wontfix` or `duplicate`, the 
+1. Manually fix any blatantly unclear or non-pertinent info in the generated
+list. If necessary, edit the issue directly in Github and generate the
+changelog again. Sometimes issues are closed without being fixed. If someone
+closed an issue and forgot to tag it as `stale`, `wontfix` or `duplicate`, the
 generator will add it to the changelog.
-3. Once everything looks fine, save the file and keep on with the release!
+1. Once everything looks fine, save the file and keep on with the release!
 
 ### GitHub's API Token
 

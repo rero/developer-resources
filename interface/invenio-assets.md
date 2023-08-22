@@ -4,7 +4,6 @@ Media assets management for Invenio.
 
 This module is based on `Flask-Assets` and `Flask-Collect`. It adds `nodejs` support and static files `invenio` modules collection.
 
-
 ## Static Files Collection
 
 In your module or `invenio` instance you have templates or static files such as images, etc. The `collect` command will go through all `invenio` install modules and make symlinks in the `Flask` `instance_dir` directory. This directory is to put generated files such as generated assets.
@@ -14,7 +13,6 @@ In your module or `invenio` instance you have templates or static files such as 
 ```bash
 my_instance collect -v      # collect static files from modules
 ```
-
 
 ## CSS and Javascript
 
@@ -71,7 +69,6 @@ my_instance npm             # create the list of nodejs module to install
 my_instance assets build    # compile css and js this will create files in the
                             # instance_dir/static/gen directory
 ```
-
 
 ## References
 

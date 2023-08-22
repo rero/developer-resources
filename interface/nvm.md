@@ -1,14 +1,14 @@
-# NVM presentation
+# NVM
 
 NVM stands for Node Version Manager. It consists in managing multiple version of NodeJS in your different projects.
 
 More details can be found on [official NVM project page on Github](https://github.com/nvm-sh/nvm), especially for installation.
 
-# Use
+## Use
 
 In all cases you should be in the working directory before launching any command.
 
-# Compatible versions
+## Compatible versions
 
 To work on rero-ils and rero-ils-ui with maximal compatibility, we recommend using the following versions of NodeJS:
 
@@ -29,9 +29,9 @@ nvm install lts/dubnium
 nvm current
 ```
 
-# Tips & Tricks
+## Tips & Tricks
 
-## Migration
+### Migration
 
 If you migrate from a version to another, process like that:
 

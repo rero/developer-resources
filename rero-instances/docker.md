@@ -28,7 +28,6 @@ Read the [documentation](https://docs.docker.com/engine/installation/linux/).
 
 ### Dockerfile
 
-
 ```yaml
 # Pull base image.
 FROM elasticsearch:2.1.1

@@ -7,13 +7,13 @@
 
 ## Guidelines
 
-These guidelines are also related to the [UX charter][1], specifically the
-[Form design][2] section.
+These guidelines are also related to the [layout charter][1], specifically the
+[form design][2] section.
 
 :warning: Form options shoud be documented, somewhere.
 
-[1]: https://github.com/rero/rero-ils/wiki/Usability-charter
-[2]: https://github.com/rero/rero-ils/wiki/Usability-charter#4-form-design
+[1]: interface/layout-charter.md
+[2]: interface/layout-charter.md#4-form-design
 
 ### Order
 
@@ -51,7 +51,7 @@ the case with documents, as specified by the *metadata working group*.
 
 - A description is optional.
 - If used, it should add information to the title.
-- It's considered as an help for the form user.
+- It's considered as a form help for the end user.
 - It's a sentence, it begins with a capital letter and ends with a punctuation
 mark.
 - In English, only the first word has a capitalized initial.
@@ -68,7 +68,7 @@ mark.
 
 ### How to handle plurals
 
-In the following example, the main key is singular, but it's `title` is plural,
+In the following example, the main key is singular, but its `title` is plural,
 as it is the label in the editor, which will contain a list of elements.
 
 On the contrary, the `title` of the `array` `items` is singular, as it is the
@@ -134,9 +134,9 @@ The same logic would apply to the `description` if any where there.
       - Example of a home made code with prefix for Switzerland: `country_sz`.
       - Example of a home made code without prefix: `received_and_complete_or_ceased`
 - **Form options**:
-    - Use the `value`/`label` method **only** if the codes need to be
+  - Use the `value`/`label` method **only** if the codes need to be
       translated.
-    - In the `label` value, use the same value as the one of the `value` key.
+  - In the `label` value, use the same value as the one of the `value` key.
       This is to avoid translating the label and the value, as it is sometimes
       needed.
-    - In case of a list and sublist with `oneOf` (ex: main type/subtype), use the same text for `title` of the 1st-level element, as for `value` and `label`. This will ease the translations.
+  - In case of a list and sublist with `oneOf` (ex: main type/subtype), use the same text for `title` of the 1st-level element, as for `value` and `label`. This will ease the translations.

@@ -9,33 +9,13 @@ __prérequis__:
 - avoir `nodejs` installé: la commande `npm` doit exister
 - avoir `git` installé
 
-### Table des matières
-
-#### [1. Etape 1: créer une nouvelle instance](#etape-1-créer-une-nouvelle-instance)
-- [L'environnement de travail](#lenvironnement-de-travail)
-- [Une nouvelle instance invenio](#une-nouvelle-instance-invenio)
-- [Initialiser l'application](#initialiser-lapplication)
-
-#### [2. Etape 2: les données](#etape-2-les-donn-es)
-- [Charger une première donnée](#charger-une-première-donnée)
-- [Validation de données avec JSON-Schema](#validation-de-données-avec-json-schema)
-- [Navigation par facettes](#navigation-par-facettes)
-
-#### [3. Etape 3: l'interface utilisateur](#etape-3-linterface-utilisateur)
-- [Changer le logo](#changer-le-logo)
-- [Ajustement la présentation des résultats](#ajustement-la-présentation-des-résultats)
-- [Correction la présentation des facettes](#correction-la-présentation-des-facettes)
-
-#### [4. Conclusion](#conclusion)
-#### [5. Références](#références)
-
 ----------------
 
 ## Etape 1: créer une nouvelle instance
 
 ### But
 
-Créer une nouvelle instance `invenio` simple basée sur `sqlite` et qui répond à l’adresse: http://localhost:5000. Cette instance devra être installée dans un environnement virtuel `python` et utilisera `docker` pour les services externes (par ex. `Elasticsearch`). Nous utiliserons l'outil fournit par `invenio`: `inveniomanage` compris dans le paquet `invenio-base`.
+Créer une nouvelle instance `invenio` simple basée sur `sqlite` et qui répond à l’adresse: <http://localhost:5000>. Cette instance devra être installée dans un environnement virtuel `python` et utilisera `docker` pour les services externes (par ex. `Elasticsearch`). Nous utiliserons l'outil fournit par `invenio`: `inveniomanage` compris dans le paquet `invenio-base`.
 
 ### Astuce
 
@@ -49,7 +29,7 @@ Nous voulons utiliser les outils `invenio` pour créer une nouvelle instance. Po
 
 #### Commandes utiles
 
-##### virtualenv:
+##### virtualenv
 
 ```bash
 mkvirtualenv workshop1  # création d'un environnement virtuel
@@ -95,6 +75,7 @@ Créer et installer la nouvelle instance.
 pip install -r list.txt   # installer une liste de paquets depuis un fichier
 pip install -e .          # installer en dev un paquet depuis un répertoire contenant setup.py
 ```
+
  __note__: l'option `-e` crée des liens symboliques au lieu d'une copie lors de l'installation du paquet. Ceci évite la réinstallation du paquet lors de la modification des sources.
 
 ##### Flask
@@ -118,13 +99,14 @@ docker-compose down   # arrêt des containers avec perte des données
 
 ##### nodejs
 
-__note__: il existe un équivalent à `pyenv` dans le monde de `nodejs`: `nvm` (https://github.com/creationix/nvm#install-script).
+__note__: il existe un équivalent à `pyenv` dans le monde de `nodejs`: `nvm` (<https://github.com/creationix/nvm#install-script>).
 
 ```bash
 # installation des outils nodejs utilisé par Invenio
 npm install -g --prefix ${VIRTUAL_ENV} node-sass@3.8.0 clean-css requirejs uglify-js
 npm install   # installation des paquets nodejs décrits dans packages.json
 ```
+
 __note__: `nodejs` est utilisé pour le code `javascript` de l'interface utilisateur. Les paquets `js` d'invenio suivent la dénomination `invenio-xxx-js`.
 
 ##### invenio
@@ -136,6 +118,7 @@ my_instance npm                    # création de la liste des dépendences js
 my_instance collect                # collecte des fichiers statiques
 my_instance assets build           # compilation des fichiers js et css
 ```
+
 __note__: my_instance est à remplacer par le nom de l'instance ici `workshop1`. Ceci permet l'interaction avec différentes instances sur la même machine.
 
 #### Exercice
@@ -151,7 +134,6 @@ __note__: my_instance est à remplacer par le nom de l'instance ici `workshop1`.
 A cette étape le serveur répond à [http://localhost:5000](http://localhost:5000).
 
 __[La Solution](solutions/install.md#création-et-installation-de-la-nouvelle-instance-invenio)__
-
 
 ### Initialiser l'application
 
@@ -271,7 +253,6 @@ __Note:__ à chaque fois que le fichier `setup.py` est modifié il faut réinsta
 
 __[La Solution](solutions/jsonschema.md#validation-des-données-avec-json-schema)__
 
-
 ### Navigation par facettes
 
 #### But
@@ -295,6 +276,7 @@ wget "https://gitlab.rero.ch/rero-projects/invenio-survival-guide/raw/master/wor
 #  ]
 pip install -e .
 ```
+
 __Note:__ il arrive fréquemment d'oublier la création des fichiers `__init__.py`: ils sont nécessaires à `python` pour que celui-ci considère un répertoire comme un paquet. Ils ne sont par exemple pas nécessaire dans les répertoires `static` car ceux-ci ne sont utilisés que pour la partie interface utilisateur (`javascript`, `css`).
 
 #### Exercice

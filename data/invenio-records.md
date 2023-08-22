@@ -16,11 +16,11 @@ echo "{'title': 'my title'}" | my_instance records create
 Two classes exists for records:
 
 - `RecordMetada`: this is the SQL model basically with the following columns:
-    - `(UUIDType) id`: unique identifier
-    - `(JSONType) json`: to store the data
-    - `(Integer) version_id`: revision storage
-    -  `(DateTime) created`: creation date
-    - `(DateTime) updated`: modification date
+  - `(UUIDType) id`: unique identifier
+  - `(JSONType) json`: to store the data
+  - `(Integer) version_id`: revision storage
+  - `(DateTime) created`: creation date
+  - `(DateTime) updated`: modification date
 - `Record`: a wrapping class around `RecordMetadata`, this provide facilities such as data access, revisions, etc.
 
 ## API

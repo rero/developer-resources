@@ -21,11 +21,11 @@ Put your tests in a directory named `tests`. Each name of files containing tests
 
 ### Files Hierarchy
 
-```
+```bash
 my_project/
   my_module/
   tests/
-  	 conftest.py                   # fixtures
+    conftest.py                   # fixtures
     test_schemas.py
     test_cli.py
     test_model.py

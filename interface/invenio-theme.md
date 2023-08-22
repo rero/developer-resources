@@ -15,7 +15,7 @@ THEME_LOGO = 'images/simple_app_logo.png'
 
 ## Example: change the Footer
 
-#### 1. create new page and footer templates file in you `templates` directory:
+### 1. create new page and footer templates file in you `templates` directory
 
 ```bash
 mkdir my_instance/templates/my_instance
@@ -23,19 +23,19 @@ touch my_instance/templates/my_instance/page.html
 touch my_instance/templates/my_instance/footer.html
 ```
 
-#### 2. set the configuration to you new file:
+### 2. set the configuration to you new file
 
 ```python
 BASE_TEMPLATE = 'my_instance/page.html'
 ```
 
-#### 3. collect static files:
+### 3. collect static files
 
 ```bash
 my_instance collect -v
 ```
 
-#### 4. set the content of the templates:
+### 4. set the content of the templates
 
 page.html:
 
@@ -51,6 +51,7 @@ page.html:
 ```
 
 footer.html
+
 ```html
 <!-- footer block -->
 <footer id="footer">

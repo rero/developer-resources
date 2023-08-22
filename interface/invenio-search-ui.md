@@ -1,13 +1,13 @@
-#invenio-search-ui
+# invenio-search-ui
 
 UI for Invenio-Search. It uses `invenio-search-js` an angular application.
-
 
 ## Installation
 
 ```python
 pip install ...
 ```
+
 You need to install `javascript` dependencies and assets. This is usually done during the instance installation (`scripts/populate.sh):
 
 ```bash
@@ -24,6 +24,7 @@ my_instance collect -v
 # compile css and javascript
 my_instance assets build
 ```
+
 ### Important Note
 
 As we use `angular` templates we need to disable cache in the browser for the template update:
@@ -31,6 +32,7 @@ As we use `angular` templates we need to disable cache in the browser for the te
 ## Basic configuration
 
 This will change the summary view in the `angularjs` `invenio-search` application.
+
 ```python
 SEARCH_UI_JSTEMPLATE_RESULTS = 'templates/my_instance/brief.html'
 ```
@@ -76,7 +78,6 @@ SEARCH_UI_JSTEMPLATE_RESULTS = 'templates/my_instance/brief.html'
   </li>
 </ul>
 ```
-
 
 ## Other Configurations
 

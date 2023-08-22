@@ -1,8 +1,10 @@
+# Layout document views
+
 ## Legend
 
 * **?** only displayed if exist
 * **-** line
-* **==** dictionary key,value 
+* **==** dictionary key,value
 * **_=** dictionary value
 * **=_** dictionary Key
 * **=** list

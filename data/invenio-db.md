@@ -41,6 +41,7 @@ assert RecordMetadata.query.count() == 0
 ```
 
 ### Entrypoints
+
 ```python
     'invenio_db.models': [
         'my_records = my_package.models'
@@ -76,10 +77,11 @@ class MyModel(db.Model):
 
 ```
 
-
 ## Migration
 
-## Command Line Interface
+RERO ILS and invenio use [Alembic](https://alembic.sqlalchemy.org/en/latest/) to manage data migration through sqlalchemy.
+
+### Command Line Interface
 
 ```bash
 invenio alembic --help    # usage
@@ -98,6 +100,7 @@ invenio alembic  upgrade    # Run upgrade migrations.
 ```
 
 ### Entrypoints
+
 ```python
     'invenio_db.alembic': [
         'my_package = my_package.alembic'
