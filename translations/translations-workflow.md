@@ -12,6 +12,7 @@ as slug), with several *components*:
 - `rero-ils`.
 - `rero-ils-public-search` (from the project `rero-ils-ui`).
 - `rero-ils-admin` (from the project `rero-ils-ui`).
+- `rero-ils-shared` (from the project `rero-ils-ui`).
 - `sonar`.
 - `sonar-ui`.
 
