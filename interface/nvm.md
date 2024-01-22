@@ -10,9 +10,9 @@ In all cases you should be in the working directory before launching any command
 
 ## Compatible versions
 
-To work on rero-ils and rero-ils-ui with maximal compatibility, we recommend using the following versions of NodeJS:
+To work on rero-ils and rero-ils-ui with maximal compatibility, we recommend using the following version of NodeJS:
 
-- `>v14.15.0`, `<v16.0.0`
+- `v16.20.2`
 
 :warning: When switching node versions in a backend application, run `poetry run invenio webpack clean`.
 
