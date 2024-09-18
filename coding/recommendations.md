@@ -16,7 +16,7 @@ Since mid-2024, RERO+ projects use [Black](https://black.readthedocs.io/en/stabl
         "editor.defaultFormatter": "ms-python.black-formatter",
         "editor.formatOnSave": true,
         "editor.codeActionsOnSave": {
-            "source.organizeImports": true
+            "source.organizeImports": "explicit"
         },
         "editor.rulers": [
             {
