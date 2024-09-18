@@ -24,6 +24,7 @@ Since mid-2024, RERO+ projects use [Black](https://black.readthedocs.io/en/stabl
             }
         ]
     },
+    "isort.args":["--profile", "black"],
 ```
 
 This will format yout Python code with Black on save and sort your imports using isort. It will also add a vertical line at 88 characters which is the default line length for Black formatted Python.
