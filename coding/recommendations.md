@@ -2,6 +2,32 @@
 
 Some coding recommendations specific to RERO+ projects.
 
+## Python formatting (Black)
+
+Since mid-2024, RERO+ projects use [Black](https://black.readthedocs.io/en/stable/) to format Python files. Here is how to configure VSCode so that your code is always conform:
+
+1. Install the [Black Formatter](https://marketplace.visualstudio.com/items?itemName=ms-python.black-formatter) extension
+2. Install the [iSort](https://marketplace.visualstudio.com/items?itemName=ms-python.isort) extension
+3. Go to VSCode Settings CTRL+Shift+P "Preferences: Open User Settings (JSON)"
+4. Use these settings for python:
+
+```json
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter",
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true
+        },
+        "editor.rulers": [
+            {
+                "column": 88,
+            }
+        ]
+    },
+```
+
+This will format yout Python code with Black on save and sort your imports using isort. It will also add a vertical line at 88 characters which is the default line length for Black formatted Python.
+
 ## Python imports
 
 Python imports can be reorganized, sorted, and changed during development.
