@@ -106,9 +106,8 @@ possible with a CLI that avoids any nginx or ES timeout.
 
 ## Prettyfier
 
-Recommended code prettyfier plugins:
+Recommended code formatting/prettyfier plugins:
 
-* Python: *to be determined*
 * Typescript/Angular: *to be determined*
 
 **Note:** Cosmetic suggestions in code reviews should be identified as such, and
