@@ -20,7 +20,7 @@ Since mid-2024, RERO+ projects use [Black](https://black.readthedocs.io/en/stabl
         },
         "editor.rulers": [
             {
-                "column": 88,
+                "column": 120,
             }
         ]
     },
