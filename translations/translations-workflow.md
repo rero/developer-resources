@@ -53,10 +53,10 @@ Weblate :arrow_left: Github (`translations`) :arrow_left: Github (`staging`)
 1. Rebase this branch onto staging `git pull --rebase upstream staging`.
 1. On your local `translations`, extract the messages and check that everything looks good.
    1. Angular projects: `npm ci` to compile the project, `npm run extract_messages` to extract the strings from the code to the master messages file.
-   2. Python projects: `poetry run python ./setup.py extract_messages` to extract the strings from the code to the master messages file.
+   2. Python projects: `poetry run poe extract_messages` to extract the strings from the code to the master messages file.
 1. Update the catalog so that all langugage files are updated.
    1. Angular projects: `npm run update_catalog --no-fuzzy-matching`
-   2. Python projects: `poetry run python ./setup.py update_catalog --no-fuzzy-matching`
+   2. Python projects: `poetry run poe update_catalog --no-fuzzy-matching`
 1. Commit with message `translations: extract messages`.
 1. Force push your local `translations` branch to upstream with `git push upstream translations -f`.
 1. Unlock the Weblate component.
