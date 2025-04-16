@@ -2,6 +2,11 @@
 
 This page describes the process that we use to publish a new release of the RERO+ projects.
 
+## Pypi (rero-invenio-base, flask-wiki, rero-invenio-files, etc)
+
+Packages that need to be available on pypi can be built and published easily with poetry (see: https://www.digitalocean.com/community/tutorials/how-to-publish-python-packages-to-pypi-using-poetry-on-ubuntu-22-04#step-2-enabling-token-authentication-for-pypi). 
+Only publish on PyPi **AFTER** the github release process. 
+
 ## RERO ILS/SONAR
 
 1. **Release the other projects:**
