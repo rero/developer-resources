@@ -10,7 +10,6 @@ API and generates a changelog with sections about fixed issues, and merged PRs.
 ## Install
 
 1. Clone the repo : `git clone https://github.com/rero/pychangelog.git`.
-2. Run `poetry install` to install dependencies.
 
 ## Usage
 
@@ -18,12 +17,10 @@ API and generates a changelog with sections about fixed issues, and merged PRs.
    1. `repo`: the name of the project (`rero-ils`, `rero-ils-ui`, `sonar`, ...)
    2. `from_tag` and `to_tag`: Title of latest release (e.g. `v1.10.0`) and
    title of next release (e.g. `v1.11.0`).
-2. Run `poetry run ./changelog.py --token <your-github-token>`
+2. Run `uv run poe changelog --token <your-github-token>`
 3. Check `PYCHANGELOG.md` for your changelog
 4. Copy the generated changelog from `PYCHANGELOG.md` to the top of your
 project's `CHANGELOG.md`.
-
-:warning: With poetry >1.5.0, `poetry run ./changelog.py` might not work because of path problems. If that happens, just put `changelog.py` in a folder and run it from there. E.g. `poetry run /changelog/changelog.py`
 
 ### Verification
 

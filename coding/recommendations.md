@@ -2,36 +2,48 @@
 
 Some coding recommendations specific to RERO+ projects.
 
-## Python formatting (Black)
+## Python linting and formatting (ruff)
 
-Since mid-2024, RERO+ projects use [Black](https://black.readthedocs.io/en/stable/) to format Python files. Here is how to configure VSCode so that your code is always conform:
+Since mid-2025, RERO+ projects use [ruff](https://docs.astral.sh/ruff/) to format Python files. Here is how to configure VSCode so that your code is always conform:
 
-1. Install the [Black Formatter](https://marketplace.visualstudio.com/items?itemName=ms-python.black-formatter) extension
-2. Install the [iSort](https://marketplace.visualstudio.com/items?itemName=ms-python.isort) extension
-3. Go to VSCode Settings CTRL+Shift+P "Preferences: Open User Settings (JSON)"
-4. Use these settings for python:
+1. Install the [ruff](https://marketplace.visualstudio.com/items?itemName=charliermarsh.ruff) extension
+2. Go to VSCode Settings CTRL+Shift+P "Preferences: Open User Settings (JSON)"
+3. Use these settings for python:
 
 ```json
     "[python]": {
-        "editor.defaultFormatter": "ms-python.black-formatter",
+        "editor.defaultFormatter": "charliermarsh.ruff",
         "editor.formatOnSave": true,
+        "editor.wordWrap": "off",
+        "editor.rulers": [120],
+        "editor.tabSize": 4,
         "editor.codeActionsOnSave": {
             "source.organizeImports": "explicit"
-        },
-        "editor.rulers": [
-            {
-                "column": 120,
-            }
-        ]
+        }
     },
-    "isort.args":["--profile", "black"],
 ```
 
-This will format yout Python code with Black on save and sort your imports using isort. It will also add a vertical line at 88 characters which is the default line length for Black formatted Python.
+This will format and lint your Python code with ruff every time you save a python file. It will also add a vertical line at 120 characters.
+
+Once the extension is installed and you have a .venv with ruff, the editor will inform you of any problems with the linter.
+
+The rules used by `ruff` are defined in the `pyproject.toml` of each project under `[tool.ruff]`. For example, you can add any exceptions to the rules in the config.
+
+To format the files in your project
+
+```bash
+uv run poe format
+```
+
+To check linting on the whole project:
+
+```bash
+uv run poe lint
+```
 
 ## Python imports
 
-Python imports can be reorganized, sorted, and changed during development.
+Python imports can be reorganized, sorted, and changed during development. `ruff` will sort and clean your imports automatically.
 
 Here are some best practices about Python imports.
 
@@ -60,26 +72,6 @@ from rero_ils.modules.api import IlsRecord
 from rero_ils.modules.location.api import Location
 from rero_ils.modules.operation_logs.extensions import UntrackedFieldsOperationLogObserverExtension
 from rero_ils.modules.utils import date_string_to_utc, extracted_data_from_ref
-```
-
-### Sort imports
-
-```bash
-poetry run isort -rc rero_ils tests
-```
-
-### Remove unused imports
-
-```bash
-poetry run autoflake --remove-all-unused-imports -i --ignore-init-module-imports -r .
-```
-
-### Tip: create an alias to sort imports and remove unused imports
-
-Add a new line in your **.bashrc** or **.zshrc**:
-
-```bash
-alias fixsort="poetry run isort -rc rero_ils tests && poetry run autoflake --remove-all-unused-imports -i --ignore-init-module-imports -r ."
 ```
 
 ## Python typing
