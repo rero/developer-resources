@@ -24,11 +24,12 @@ Only publish on PyPi **AFTER** the github release process.
    3. Update `rero_ils/version.py` OR `sonar/version.py`.
    4. Update `pyproject.toml` with the version number.
    5. Update the `CHANGELOG.md` file [as described here][1].
-   6. Commit with message `release: v1.X.X`
-   7. Open a Pull Request for the release on the Github repository (the tests will fail as long as the UI version is not published on NPM).
-   8. Force push the state of the release branches for all the project to the test branch (`bib-test`)
-   9. Devs prepare the images and the data migration scripts and deploy the release to the test branch.
-   10. Test the release thouroughly and fix any problems with new commits.
+   6. `uv sync` to update the version number in uv.lock file 
+   7. Commit with message `release: v1.X.X`
+   8. Open a Pull Request for the release on the Github repository (the tests will fail as long as the UI version is not published on NPM).
+   9. Force push the state of the release branches for all the project to the test branch (`bib-test`)
+   10. Devs prepare the images and the data migration scripts and deploy the release to the test branch.
+   11. Test the release thouroughly and fix any problems with new commits.
 5. **Publish to `master`:**
    1. When the release has been tested and validated and fixes and release PR are merged into `staging`, update your local `staging` branch, verify carefully that the commits, commit hashes are the same.
    2. Checkout to your local `master` branch, make sure it's up to date with the remote `master`.
