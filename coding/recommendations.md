@@ -96,6 +96,39 @@ external task.
 * `scan()` can create ElasticSearch timeouts. Each export task should be
 possible with a CLI that avoids any nginx or ES timeout.
 
+## Angular/Typescript linting (eslint)
+
+Our Angular projects use ESLint with a configuration file in the root of each project `eslint.config.js`
+
+Configure your editor so that it shows you errors and warnings directly in the code:
+
+1. Install the [eslint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) extension
+2. Go to VSCode Settings CTRL+Shift+P "Preferences: Open User Settings (JSON)"
+3. Use these settings:
+
+```json
+    "typescript.validate.enable": false,
+    "css.lint.unknownAtRules": "ignore",
+    "scss.lint.unknownAtRules": "ignore",
+    "eslint.enable": true,
+    "eslint.format.enable": true,
+    "eslint.validate": ["javascript", "typescript", "html"],
+    "eslint.useFlatConfig": true,
+    "eslint.workingDirectories": ["../projects/**/src"],
+    "eslint.options": {
+        "overrideConfigFile": "eslint.config.js"
+    },
+    "[typescript]": {
+        "editor.wordWrap": "off",
+        "editor.formatOnSave": false,
+        "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+        "editor.tabSize": 2,
+        "editor.codeActionsOnSave": {
+            "source.fixAll.eslint": "explicit"
+        }
+    },
+```
+
 ## Prettyfier
 
 Recommended code formatting/prettyfier plugins:
